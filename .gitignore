@@ -1,12 +1,8 @@
-# Frontend
 frontend/node_modules/
 frontend/dist/
-
-# Backend
+node_modules/
 backend/venv/
 backend/__pycache__/
 backend/*.pyc
-
-# Sistema
 .DS_Store
 .env
