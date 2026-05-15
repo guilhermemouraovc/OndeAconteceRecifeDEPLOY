@@ -2,7 +2,6 @@
 
 Plataforma web progressiva (PWA) para descoberta de eventos culturais em Recife. Agrega eventos da Prefeitura, produtores independentes e plataformas como TicketPE em um feed centralizado com filtros inteligentes.
 
-Projeto acadêmico — 5º período de Ciência da Computação, CESAR School.
 
 ## Tecnologias
 
