@@ -52,6 +52,7 @@ const favCount = computed(() => store.favoritos.length)
       </RouterLink>
       <nav class="nav" aria-label="Principal">
         <RouterLink to="/">Agenda</RouterLink>
+        <RouterLink to="/mapa">🗺️ Mapa</RouterLink>
         <RouterLink to="/favoritos" class="nav-link-fav">
           ♥ Salvos
           <span v-if="favCount > 0" class="fav-badge">{{ favCount }}</span>
@@ -72,7 +73,7 @@ const favCount = computed(() => store.favoritos.length)
         </p>
         <div class="hero-actions">
           <RouterLink class="btn btn-primary" to="/cadastro">Sou produtor(a) cultural</RouterLink>
-          <a class="btn btn-ghost" href="#agenda">Ver agenda</a>
+          <RouterLink class="btn btn-ghost" to="/mapa">Ver no mapa</RouterLink>
         </div>
       </div>
       <div v-if="destaque" class="hero-card" role="article" :aria-label="destaque.titulo">

@@ -67,6 +67,18 @@ const corCategoria = computed(() => {
   }
   return '#94a3b8'
 })
+
+// Label legível da fonte do evento
+const sourceLabelMap = {
+  ticketpe: 'TicketPE',
+  sympla: 'Sympla',
+  prefeitura: 'Prefeitura do Recife',
+  manual: null,
+}
+const sourceLabel = computed(() => {
+  const s = evento.value?.source
+  return s ? (sourceLabelMap[s] ?? null) : null
+})
 </script>
 
 <template>
@@ -98,6 +110,9 @@ const corCategoria = computed(() => {
             </span>
             <span v-if="badgePreco" class="chip" :class="`chip--${badgePreco.tipo}`">
               {{ badgePreco.label }}
+            </span>
+            <span v-if="sourceLabel" class="chip chip--source">
+              via {{ sourceLabel }}
             </span>
           </div>
 
@@ -162,6 +177,18 @@ const corCategoria = computed(() => {
 
             <!-- botões de ação -->
             <div class="cta-group">
+              <!-- Botão de compra de ingressos (aparece quando há link_compra) -->
+              <a
+                v-if="evento.link_compra"
+                :href="evento.link_compra"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-btn cta-btn--ingresso"
+                aria-label="`Comprar ingresso para ${evento.titulo}`"
+              >
+                🎟️ Comprar ingresso
+              </a>
+
               <button
                 v-if="evento.local || evento.bairro"
                 class="cta-btn cta-btn--maps"
@@ -200,6 +227,10 @@ const corCategoria = computed(() => {
             dia_semana: evento.dia_semana,
             periodo_dia: evento.periodo_dia,
             faixa_preco: evento.faixa_preco,
+            lat: evento.lat,
+            lng: evento.lng,
+            source: evento.source,
+            link_compra: evento.link_compra,
             classificacao_texto: evento.classificacao_texto,
           }, null, 2) }}</pre>
         </details>
@@ -271,6 +302,7 @@ const corCategoria = computed(() => {
 .chip--free { background: rgba(34,197,94,0.15); color: #86efac; border-color: rgba(34,197,94,0.3); }
 .chip--paid { background: rgba(234,179,8,0.15); color: #fde68a; border-color: rgba(234,179,8,0.3); }
 .chip--unknown { background: rgba(148,163,184,0.12); color: #94a3b8; border-color: rgba(148,163,184,0.25); }
+.chip--source { background: rgba(99,102,241,0.15); color: #a5b4fc; border-color: rgba(99,102,241,0.3); }
 
 .ev-titulo {
   font-family: 'Fraunces', Georgia, serif;
@@ -338,8 +370,21 @@ const corCategoria = computed(() => {
 .cta-btn {
   padding: 0.6rem 1rem; border-radius: 10px; border: 1px solid;
   font-weight: 700; font-size: 0.88rem; cursor: pointer; text-align: left;
-  transition: all 0.15s;
+  transition: all 0.15s; text-decoration: none; display: block;
 }
+
+/* Botão de ingresso — destaque em dourado */
+.cta-btn--ingresso {
+  background: rgba(234,179,8,0.2);
+  border-color: rgba(234,179,8,0.45);
+  color: #fde68a;
+  text-align: center;
+}
+.cta-btn--ingresso:hover {
+  background: rgba(234,179,8,0.35);
+  border-color: rgba(234,179,8,0.7);
+}
+
 .cta-btn--maps {
   background: rgba(15,118,110,0.2); border-color: rgba(94,234,212,0.35); color: #5eead4;
 }
