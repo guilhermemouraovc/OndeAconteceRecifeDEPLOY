@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 
 from ml.classifier import predict_gratuito_pago
 from pipeline import process_event_dict
+from scrapers import run_all as _run_scrapers
 
 app = FastAPI(title="Onde Acontece Recife", version="0.3.0")
 
@@ -24,8 +25,6 @@ app.add_middleware(
 
 _EVENTS: List[Dict[str, Any]] = []
 
-
-# ── seed ─────────────────────────────────────────────────────────────────────
 
 def _seed() -> None:
     if _EVENTS:
@@ -386,7 +385,6 @@ def _seed() -> None:
     ]
     for raw in base:
         row = process_event_dict(raw)
-        # preserva campos que o pipeline não conhece
         for extra_key in ("lat", "lng", "source", "link_compra"):
             if extra_key in raw:
                 row[extra_key] = raw[extra_key]
@@ -398,10 +396,8 @@ def _seed() -> None:
 _seed()
 
 
-# ── helpers ───────────────────────────────────────────────────────────────────
 
 def _slug(text: str) -> str:
-    """Gera slug URL-safe a partir de texto (igual ao frontend)."""
     s = normalize("NFD", text or "")
     s = "".join(c for c in s if not (0x0300 <= ord(c) <= 0x036F))
     s = s.lower()
@@ -422,7 +418,6 @@ def _parse_iso(value: str | None):
         return None
 
 
-# ── models ────────────────────────────────────────────────────────────────────
 
 class ClassificarBody(BaseModel):
     texto: str = Field(min_length=1)
@@ -441,11 +436,9 @@ class EventCreate(BaseModel):
     gratuito: Optional[bool] = None
     organizador: str = Field(min_length=2, max_length=200)
     email_contato: str = Field(min_length=5, max_length=200)
-    source: Optional[str] = None          # "ticketpe" | "sympla" | "prefeitura" | "manual"
-    link_compra: Optional[str] = None     # URL externa de compra de ingressos
+    source: Optional[str] = None      
+    link_compra: Optional[str] = None    
 
-
-# ── endpoints ─────────────────────────────────────────────────────────────────
 
 @app.get("/health")
 def health() -> Dict[str, str]:
@@ -457,7 +450,6 @@ def read_root() -> Dict[str, str]:
     return {"message": "Onde Acontece Recife API v0.3", "docs": "/docs"}
 
 
-# E2-US04 / E2-US05: feed com filtros
 @app.get("/events")
 def list_events(
     categoria: Optional[str] = Query(None, description="Filtro parcial por categoria"),
@@ -471,12 +463,9 @@ def list_events(
     now = datetime.now()
     results = list(_EVENTS)
 
-    # filtro categoria
     if categoria:
         cat_low = categoria.lower()
         results = [e for e in results if cat_low in (e.get("categoria") or "").lower()]
-
-    # filtro preço
     if preco:
         def _preco_ok(e):
             p = e.get("preco")
@@ -494,12 +483,10 @@ def list_events(
             return True
         results = [e for e in results if _preco_ok(e)]
 
-    # filtro bairro
     if bairro:
         b_low = bairro.lower()
         results = [e for e in results if b_low in (e.get("bairro") or "").lower()]
 
-    # filtro data
     if data:
         today = now.replace(hour=0, minute=0, second=0, microsecond=0)
         def _data_ok(e):
@@ -520,7 +507,6 @@ def list_events(
             return True
         results = [e for e in results if _data_ok(e)]
 
-    # filtro agora (próximas 3h)
     if agora:
         from datetime import timedelta
         limite = now + timedelta(hours=3)
@@ -529,7 +515,6 @@ def list_events(
             return dt and now <= dt <= limite
         results = [e for e in results if _agora_ok(e)]
 
-    # paginação
     total = len(results)
     start = (page - 1) * per_page
     paginated = results[start: start + per_page]
@@ -542,7 +527,6 @@ def list_events(
     }
 
 
-# E2-US08: detalhe do evento por slug
 @app.get("/events/{slug}")
 def get_event(slug: str) -> Dict[str, Any]:
     for ev in _EVENTS:
@@ -564,7 +548,6 @@ def create_event(body: EventCreate) -> Dict[str, Any]:
     return row
 
 
-# E2-US04: bairros disponíveis para popular o filtro
 @app.get("/meta/bairros")
 def get_bairros() -> List[str]:
     seen = set()
@@ -577,7 +560,6 @@ def get_bairros() -> List[str]:
     return sorted(result)
 
 
-# E2-US04: categorias disponíveis
 @app.get("/meta/categorias")
 def get_categorias() -> List[str]:
     seen = set()
@@ -595,7 +577,37 @@ def classificar(body: ClassificarBody) -> Dict[str, Any]:
     return predict_gratuito_pago(body.texto)
 
 
+@app.post("/scraper/run")
+def scraper_run(max_por_fonte: int = 30) -> Dict[str, Any]:
+    result = _run_scrapers(max_per_source=max_por_fonte)
+    raw_events: list[Dict[str, Any]] = result.get("events", [])
+
+    titulos_existentes = {ev.get("titulo", "").lower() for ev in _EVENTS}
+    adicionados = 0
+
+    for raw in raw_events:
+        titulo_key = (raw.get("titulo") or "").lower()
+        if titulo_key in titulos_existentes:
+            continue  # deduplicação simples por título
+        row = process_event_dict(raw)
+        for extra_key in ("lat", "lng", "source", "link_compra"):
+            if raw.get(extra_key) is not None:
+                row[extra_key] = raw[extra_key]
+        texto = f"{row.get('titulo', '')} {row.get('descricao', '')}"
+        row["classificacao_texto"] = predict_gratuito_pago(texto)
+        _EVENTS.append(row)
+        titulos_existentes.add(titulo_key)
+        adicionados += 1
+
+    return {
+        "adicionados": adicionados,
+        "ignorados_duplicados": len(raw_events) - adicionados,
+        "por_fonte": result.get("por_fonte", {}),
+        "erros": result.get("erros", []),
+        "total_em_memoria": len(_EVENTS),
+    }
+
+
 @app.post("/pipeline/preview")
 def pipeline_preview(body: EventCreate) -> Dict[str, Any]:
-    """Pré-visualiza o registro após normalização e variáveis derivadas (sem persistir)."""
     return process_event_dict(body.model_dump())
