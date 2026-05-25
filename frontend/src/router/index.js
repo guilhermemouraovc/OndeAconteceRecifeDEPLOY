@@ -29,6 +29,11 @@ const router = createRouter({
       name: 'favoritos',
       component: () => import('@/views/FavoritosView.vue'),
     },
+    {
+      path: '/scraper',
+      name: 'scraper',
+      component: () => import('@/views/ScraperView.vue'),
+    },
     // fallback
     {
       path: '/:pathMatch(.*)*',

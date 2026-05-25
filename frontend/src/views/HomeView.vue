@@ -57,6 +57,7 @@ const favCount = computed(() => store.favoritos.length)
           ♥ Salvos
           <span v-if="favCount > 0" class="fav-badge">{{ favCount }}</span>
         </RouterLink>
+        <RouterLink to="/scraper">⚙️ Coleta</RouterLink>
         <RouterLink class="nav-cta" to="/cadastro">Cadastrar evento</RouterLink>
       </nav>
     </header>
