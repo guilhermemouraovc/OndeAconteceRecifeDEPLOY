@@ -1,13 +1,19 @@
 # Onde Acontece Recife
 
-Plataforma web progressiva (PWA) para descoberta de eventos culturais em Recife. Agrega eventos da Prefeitura, produtores independentes e plataformas como TicketPE em um feed centralizado com filtros inteligentes.
+Plataforma web progressiva (PWA) para descoberta de eventos culturais em Recife. Agrega eventos da Prefeitura, produtores independentes e plataformas como TicketPE e Sympla em um feed centralizado com filtros inteligentes e mapa interativo.
 
+Projeto acadêmico — CESAR School, 2026.
+
+---
 
 ## Tecnologias
 
 - **Frontend:** Vue.js 3 + Vite + Pinia + Vue Router
 - **Backend:** FastAPI + Python 3.11+
 - **ML/Pipeline:** scikit-learn, pandas, joblib
+- **Mapa:** Mapbox GL JS v3 (carregado via CDN, token obrigatório)
+
+---
 
 ## Como rodar
 
@@ -34,25 +40,118 @@ npm run dev
 
 App disponível em `http://localhost:5173`.
 
-Opcional: crie `frontend/.env.development` com `VITE_API_BASE_URL=http://127.0.0.1:8000` se a API não estiver na porta padrão.
+### Variáveis de ambiente
+
+Crie o arquivo `frontend/.env` com as seguintes variáveis:
+
+```env
+# URL da API (opcional — padrão: http://localhost:8000)
+VITE_API_BASE_URL=http://127.0.0.1:8000
+
+# Token público do Mapbox (obrigatório para a view /mapa)
+# Crie sua conta em https://mapbox.com e copie o token que começa com pk.eyJ1...
+VITE_MAPBOX_TOKEN=pk.eyJ1IIseuTokenAqui
+```
+
+Sem o `VITE_MAPBOX_TOKEN`, a rota `/mapa` exibe uma mensagem de erro amigável — o restante do app funciona normalmente.
+
+---
 
 ## Funcionalidades implementadas
 
-- Feed de eventos com filtros por categoria, preço, bairro e data
+### Feed e filtros
+- Feed de eventos com filtros combinados por categoria, preço, bairro e data
 - Modo "O que tá rolando agora?" com auto-refresh a cada 5 minutos
-- Página de detalhe do evento com dados do pipeline de ML
-- Favoritos persistidos em localStorage
-- Cadastro autônomo de eventos por produtores culturais
+- Skeleton loading, estado vazio e mensagem de erro
+
+### Mapa interativo
+- Rota `/mapa` com mapa Mapbox GL JS em dark mode centrado em Recife
+- Marcadores coloridos por categoria com popup de detalhes
+- Botão "Usar minha localização" com fly-to animado
+- Link direto do popup para a página de detalhe do evento
+- Legenda de categorias
+
+### Detalhe do evento
+- Página dedicada por slug com todas as informações do evento
+- Botão "Comprar ingresso" (aparece automaticamente quando o evento tem `link_compra`)
+- Badge de fonte ("via TicketPE", "via Sympla", "via Prefeitura do Recife")
+- Botão "Como chegar" abre Google Maps com endereço pré-preenchido
+- Compartilhamento via Web Share API ou cópia de link
+
+### Dados e ML
+- 22 eventos no seed com coordenadas geográficas reais, `source` e `link_compra`
 - Classificador automático gratuito/pago por texto (heurística + modelo treinado)
 - Pipeline de normalização de bairros, categorias e variáveis derivadas
+- Badge de confiança da classificação por IA na página de detalhe
+
+### Produtores e favoritos
+- Formulário de cadastro autônomo de eventos por produtores culturais
+- Favoritos persistidos em localStorage com contador no nav
+
+---
+
+## Estrutura de um evento (modelo completo)
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `titulo` | string | Nome do evento |
+| `descricao` | string | Descrição completa |
+| `categoria` | string | Ex: "Música ao vivo", "Teatro", "Exposição" |
+| `bairro` | string | Bairro normalizado pelo pipeline |
+| `local` | string | Nome do espaço ou endereço |
+| `lat` / `lng` | float | Coordenadas geográficas (usadas pelo mapa) |
+| `inicio_iso` | string | Data e hora no formato ISO 8601 |
+| `preco` | float | Valor em reais (0 = gratuito) |
+| `gratuito` | bool | Flag explícita de gratuidade |
+| `organizador` | string | Nome do organizador ou produtora |
+| `email_contato` | string | E-mail de contato |
+| `source` | string | Origem: `ticketpe`, `sympla`, `prefeitura`, `manual` |
+| `link_compra` | string \| null | URL externa de compra de ingressos |
+
+---
+
+## Rotas do frontend
+
+| Rota | View | Descrição |
+|---|---|---|
+| `/` | `HomeView` | Feed com filtros e hero |
+| `/mapa` | `MapaView` | Mapa interativo Mapbox |
+| `/evento/:slug` | `EventoDetalheView` | Detalhe do evento |
+| `/cadastro` | `CadastroProdutorView` | Formulário para produtores |
+| `/favoritos` | `FavoritosView` | Eventos salvos |
+
+## Endpoints da API
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/events` | Feed com filtros e paginação |
+| `GET` | `/events/{slug}` | Detalhe de um evento |
+| `POST` | `/events` | Cadastro de novo evento |
+| `GET` | `/meta/bairros` | Lista de bairros disponíveis |
+| `GET` | `/meta/categorias` | Lista de categorias disponíveis |
+| `POST` | `/ml/classificar` | Classifica texto como gratuito/pago |
+| `POST` | `/pipeline/preview` | Pré-visualiza normalização sem persistir |
+
+Parâmetros de `/events`: `categoria`, `preco` (gratuito | ate50 | 50a100 | acima100), `bairro`, `data` (hoje | amanha | fds | semana), `agora`, `page`, `per_page`.
+
+---
 
 ## Backlog coberto no código
 
-| Ticket | Arquivo |
-|---|---|
-| SCRUM-12 | `frontend/src/views/HomeView.vue`, `frontend/src/components/FilterBar.vue`, `frontend/src/stores/events.js` |
-| SCRUM-14 | `frontend/src/views/CadastroProdutorView.vue`, `POST /events` |
-| SCRUM-20 | `backend/pipeline/normalize.py`, `backend/data/` |
-| SCRUM-21 | `backend/pipeline/clean.py` |
-| SCRUM-22 | `backend/pipeline/features.py` |
-| SCRUM-33 | `backend/ml/` (treino + inferência) |
+| Ticket | Épico | Arquivo principal |
+|---|---|---|
+| E1-US01 | Setup & Infraestrutura | `backend/main.py`, `frontend/src/` |
+| E2-US04 / E2-US05 | Feed + filtros | `HomeView.vue`, `FilterBar.vue`, `events.js` |
+| E2-US06 | Mapa interativo | `frontend/src/views/MapaView.vue` |
+| E2-US07 | Modo "Agora" | `HomeView.vue`, `events.js` |
+| E2-US08 | Detalhe do evento | `EventoDetalheView.vue`, `GET /events/{slug}` |
+| E2-US10 | Favoritos | `FavoritosView.vue`, `events.js` |
+| E3-US12 | Cadastro por produtores | `CadastroProdutorView.vue`, `POST /events` |
+| E3-US13 | Pipeline de limpeza | `backend/pipeline/` |
+| E4-US17 | Classificador gratuito/pago | `backend/ml/` |
+
+### Próximas entregas planejadas
+
+- `E3-US11` — Scraper TicketPE + Sympla + Prefeitura (integração API TicketPE em andamento)
+- `E2-US09` — Autenticação via Supabase Auth
+- `E6-US27` — Dashboard com gráficos de distribuição de eventos
