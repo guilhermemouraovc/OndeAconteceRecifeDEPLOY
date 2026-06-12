@@ -1,75 +1,60 @@
-<script setup>
-import { useEventsStore } from '@/stores/events.js'
-
-const store = useEventsStore()
-
-defineProps({
-  agora: { type: Boolean, default: false },
-})
-</script>
-
 <template>
-  <div class="empty" role="status">
-    <span class="empty__icon">{{ agora ? '🌙' : '🔍' }}</span>
-    <p class="empty__titulo">
-      {{ agora ? 'Nada rolando agora perto de você' : 'Nenhum evento encontrado' }}
-    </p>
-    <p class="empty__desc">
-      {{ agora
-        ? 'Tente ampliar o horário ou desative o filtro "Agora".'
-        : 'Tente ajustar os filtros ou limpar a busca para ver mais eventos.' }}
-    </p>
-    <button v-if="store.hasActiveFilters || store.filterAgora" class="empty__btn" @click="store.clearFilters()">
-      Limpar filtros
-    </button>
+  <div class="empty-state" role="status">
+    <q-icon :name="icon" :size="iconSize" color="grey-5" aria-hidden="true" />
+    <div class="empty-state-title font-display">{{ title }}</div>
+    <div class="empty-state-text">{{ message }}</div>
+    <q-btn
+      v-if="showButton"
+      :color="buttonColor"
+      :label="buttonLabel"
+      :to="buttonTo"
+      no-caps
+      unelevated
+      :aria-label="buttonAriaLabel"
+      class="q-mt-md"
+      @click="$emit('button-click')"
+    />
   </div>
 </template>
 
+<script setup>
+defineProps({
+  title: { type: String, required: true },
+  message: { type: String, required: true },
+  icon: { type: String, default: 'search_off' },
+  iconSize: { type: String, default: '64px' },
+  showButton: { type: Boolean, default: true },
+  buttonLabel: { type: String, default: 'Ver todos os eventos' },
+  buttonColor: { type: String, default: 'primary' },
+  buttonTo: { type: [String, Object], default: null },
+  buttonAriaLabel: { type: String, default: 'Ver todos os eventos' },
+})
+
+defineEmits(['button-click'])
+</script>
+
 <style scoped>
-.empty {
-  grid-column: 1 / -1;
+.empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 3.5rem 1rem;
+  justify-content: center;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.empty__icon {
-  font-size: 2.5rem;
-  line-height: 1;
-}
-
-.empty__titulo {
-  margin: 0;
-  font-size: 1.1rem;
+.empty-state-title {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-family: 'Fraunces', Georgia, serif;
+  color: #fff;
+  margin-top: 24px;
+  margin-bottom: 8px;
 }
 
-.empty__desc {
-  margin: 0;
+.empty-state-text {
+  font-size: 1rem;
   color: var(--oa-muted);
-  font-size: 0.92rem;
-  max-width: 28rem;
-}
-
-.empty__btn {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: rgba(2, 6, 23, 0.4);
-  color: var(--oa-text);
-  font-weight: 700;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
-}
-
-.empty__btn:hover {
-  border-color: rgba(94, 234, 212, 0.45);
-  background: rgba(15, 118, 110, 0.15);
+  max-width: 400px;
+  line-height: 1.6;
 }
 </style>

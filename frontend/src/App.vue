@@ -1,7 +1,7 @@
-<script setup>
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
-  <RouterView />
+  <router-view />
 </template>
+
+<script setup>
+import './css/accessibility.css'
+</script>

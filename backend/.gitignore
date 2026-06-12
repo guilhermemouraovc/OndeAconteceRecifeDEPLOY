@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 .pytest_cache/
 ml/artifacts/*.joblib
+uploads/

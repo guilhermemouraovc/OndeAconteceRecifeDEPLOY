@@ -37,5 +37,42 @@ export function useApi() {
     return data
   }
 
-  return { base, getJson, postJson }
+  async function patchJson(path, body, headers = {}) {
+    const res = await fetch(`${base}${path}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', ...headers },
+      body: JSON.stringify(body),
+    })
+    const data = await parseJson(res)
+    if (!res.ok) {
+      const msg = data?.detail || res.statusText
+      throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg))
+    }
+    return data
+  }
+
+  async function postFormData(path, formData) {
+    const res = await fetch(`${base}${path}`, {
+      method: 'POST',
+      body: formData,
+    })
+    const data = await parseJson(res)
+    if (!res.ok) {
+      const msg = data?.detail || res.statusText
+      throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg))
+    }
+    return data
+  }
+
+  async function getJsonWithHeaders(path, headers = {}) {
+    const res = await fetch(`${base}${path}`, { headers })
+    const data = await parseJson(res)
+    if (!res.ok) {
+      const msg = data?.detail || res.statusText
+      throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg))
+    }
+    return data
+  }
+
+  return { base, getJson, getJsonWithHeaders, postJson, patchJson, postFormData }
 }

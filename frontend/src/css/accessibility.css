@@ -1,0 +1,49 @@
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 2px;
+}
+
+[role='button']:focus-visible,
+[role='link']:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 2px;
+}
+
+[tabindex='0']:focus-visible,
+[tabindex]:not([tabindex='-1']):focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0f766e;
+  color: white;
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
