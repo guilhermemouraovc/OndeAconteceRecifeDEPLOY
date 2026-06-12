@@ -5,12 +5,13 @@ from typing import Any
 
 from .prefeitura import scrape as scrape_prefeitura
 from .sympla import scrape as scrape_sympla
+from .ticketpe import scrape as scrape_ticketpe
 
 logger = logging.getLogger(__name__)
 
+# Branch feat/ticketpe-2-eventos: apenas integração TicketPE (máx. 2 eventos).
 _SOURCES = [
-    ("prefeitura", scrape_prefeitura),
-    ("sympla", scrape_sympla),
+    ("ticketpe", scrape_ticketpe),
 ]
 
 
@@ -39,4 +40,4 @@ def run_all(max_per_source: int = 30) -> dict[str, Any]:
     }
 
 
-__all__ = ["run_all", "scrape_prefeitura", "scrape_sympla"]
+__all__ = ["run_all", "scrape_prefeitura", "scrape_sympla", "scrape_ticketpe"]

@@ -8,7 +8,7 @@ Projeto acadêmico — CESAR School, 2026.
 
 ## Tecnologias
 
-- **Frontend:** Vue.js 3 + Vite + Pinia + Vue Router
+- **Frontend:** Vue.js 3 + Quasar + Pinia + Vue Router
 - **Backend:** FastAPI + Python 3.11+
 - **ML/Pipeline:** scikit-learn, pandas, joblib
 - **Mapa:** Mapbox GL JS v3 (carregado via CDN, token obrigatório)
@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-App disponível em `http://localhost:5173`.
+App disponível em `http://localhost:9000`.
 
 ### Variáveis de ambiente
 

@@ -1,50 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
+import { defineRouter } from '#q-app/wrappers'
+import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
+import routes from './routes'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
+export default defineRouter(function () {
+  const createHistory = process.env.SERVER
+    ? createMemoryHistory
+    : process.env.VUE_ROUTER_MODE === 'history'
+      ? createWebHistory
+      : createWebHashHistory
+
+  return createRouter({
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) return savedPosition
+      if (to.hash) return { el: to.hash, behavior: 'smooth', top: 80 }
+      return { left: 0, top: 0, behavior: 'instant' }
     },
-    {
-      path: '/mapa',
-      name: 'mapa',
-      component: () => import('@/views/MapaView.vue'),
-    },
-    {
-      path: '/cadastro',
-      name: 'cadastro',
-      component: () => import('@/views/CadastroProdutorView.vue'),
-    },
-    {
-      path: '/evento/:slug',
-      name: 'evento',
-      component: () => import('@/views/EventoDetalheView.vue'),
-    },
-    {
-      path: '/favoritos',
-      name: 'favoritos',
-      component: () => import('@/views/FavoritosView.vue'),
-    },
-    {
-      path: '/scraper',
-      name: 'scraper',
-      component: () => import('@/views/ScraperView.vue'),
-    },
-    // fallback
-    {
-      path: '/:pathMatch(.*)*',
-      redirect: '/',
-    },
-  ],
-  scrollBehavior(to, _from, savedPosition) {
-    if (savedPosition) return savedPosition
-    if (to.hash) return { el: to.hash, behavior: 'smooth' }
-    return { top: 0, behavior: 'smooth' }
-  },
+    routes,
+    history: createHistory(process.env.VUE_ROUTER_BASE),
+  })
 })
-
-export default router

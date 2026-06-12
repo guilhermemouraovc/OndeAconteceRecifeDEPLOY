@@ -1,0 +1,16 @@
+{
+  "name": "test-evidence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "reset": "node reset-evidence-data.mjs",
+    "flyer": "node create-flyer.mjs",
+    "shots": "node run-us20-us21-us23.mjs",
+    "pdf": "node gerar-pdf.mjs",
+    "all": "node run-all.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}
