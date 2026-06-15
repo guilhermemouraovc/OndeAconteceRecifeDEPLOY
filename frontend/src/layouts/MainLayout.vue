@@ -16,6 +16,27 @@
 
         <q-space />
 
+        <!-- Barra de busca inline na toolbar -->
+        <div
+          v-if="showSearch && !$route.path.startsWith('/evento') && !$q.screen.lt.md"
+          class="toolbar-search"
+        >
+          <q-input
+            v-model="store.searchQuery"
+            dense
+            borderless
+            clearable
+            dark
+            placeholder="Buscar shows, peças..."
+            class="toolbar-search__input"
+            @keyup.enter="goProgramacao"
+          >
+            <template #prepend>
+              <q-icon name="search" color="grey-5" size="18px" />
+            </template>
+          </q-input>
+        </div>
+
         <nav v-if="!$q.screen.lt.md" class="nav-desktop" aria-label="Principal">
           <router-link
             v-for="item in navItems"
@@ -29,6 +50,30 @@
               {{ favCount }}
             </q-badge>
           </router-link>
+
+          <!-- Dropdown Produtores -->
+          <div class="nav-dropdown">
+            <button
+              class="nav-link nav-link--btn"
+              :class="{ 'nav-link--active': produtoresAtivo }"
+              type="button"
+            >
+              Produtores
+              <q-icon name="expand_more" size="16px" class="nav-dropdown__arrow" />
+            </button>
+            <div class="nav-dropdown__menu">
+              <router-link
+                v-for="item in produtoresItems"
+                :key="item.name"
+                :to="{ name: item.name }"
+                class="nav-dropdown__item"
+                :class="{ 'nav-dropdown__item--active': route.name === item.name }"
+              >
+                <q-icon :name="item.icon" size="16px" />
+                {{ item.label }}
+              </router-link>
+            </div>
+          </div>
         </nav>
 
         <q-btn
@@ -55,22 +100,6 @@
         />
       </q-toolbar>
 
-      <div v-if="showSearch && !$route.path.startsWith('/evento')" class="search-bar">
-        <q-input
-          v-model="store.searchQuery"
-          dense
-          borderless
-          clearable
-          dark
-          placeholder="Buscar shows, peças, exposições..."
-          class="search-input"
-          @keyup.enter="goProgramacao"
-        >
-          <template #prepend>
-            <q-icon name="search" color="grey-5" />
-          </template>
-        </q-input>
-      </div>
     </q-header>
 
     <!-- Drawer de filtros -->
@@ -185,7 +214,7 @@
     <q-drawer v-model="mobileMenu" side="left" overlay bordered class="mobile-drawer">
       <q-list dark padding>
         <q-item
-          v-for="item in [...navItems, { name: 'scraper', label: 'Coleta', icon: 'sync' }]"
+          v-for="item in [...navItems, ...produtoresItems]"
           :key="item.name"
           clickable
           v-ripple
@@ -207,33 +236,18 @@
     <q-footer class="oa-footer">
       <div class="frevo-stripe" aria-hidden="true" />
       <div class="footer-inner">
-        <div class="footer-col footer-col--brand">
-          <div class="brand">
-            <span class="brand-mark" aria-hidden="true" />
-            <span class="brand-text">
-              <span class="brand-title font-display">Onde Acontece</span>
-              <span class="brand-sub">Recife</span>
-            </span>
-          </div>
-          <p class="footer-tagline">
-            A agenda cultural da cidade, reunindo eventos da Prefeitura, produtores independentes e
-            plataformas de ingressos num só lugar.
-          </p>
+        <div class="brand" aria-label="Onde Acontece Recife">
+          <span class="brand-mark" aria-hidden="true" />
+          <span class="brand-text">
+            <span class="brand-title font-display">Onde Acontece</span>
+            <span class="brand-sub">Recife</span>
+          </span>
         </div>
-
-        <div class="footer-col">
-          <div class="footer-heading">Explorar</div>
-          <router-link :to="{ name: 'programacao' }" class="footer-link">Programação</router-link>
-          <router-link :to="{ name: 'mapa' }" class="footer-link">Mapa de eventos</router-link>
-          <router-link :to="{ name: 'favoritos' }" class="footer-link">Salvos</router-link>
-        </div>
-
-        <div class="footer-col">
-          <div class="footer-heading">Produtores</div>
-          <router-link :to="{ name: 'cadastro' }" class="footer-link">Cadastrar evento</router-link>
-          <router-link :to="{ name: 'moderacao' }" class="footer-link">Moderação</router-link>
-          <router-link :to="{ name: 'scraper' }" class="footer-link">Coleta de dados</router-link>
-        </div>
+        <span class="footer-divider" aria-hidden="true" />
+        <p class="footer-tagline">
+          A agenda cultural da cidade, reunindo eventos da Prefeitura, produtores independentes e
+          plataformas de ingressos num só lugar.
+        </p>
       </div>
     </q-footer>
   </q-layout>
@@ -261,9 +275,17 @@ const navItems = [
   { name: 'programacao', label: 'Programação', icon: 'event' },
   { name: 'mapa', label: 'Mapa', icon: 'map' },
   { name: 'favoritos', label: 'Salvos', icon: 'favorite' },
-  { name: 'cadastro', label: 'Cadastrar', icon: 'add_circle' },
-  { name: 'moderacao', label: 'Moderação', icon: 'task_alt' },
 ]
+
+const produtoresItems = [
+  { name: 'cadastro', label: 'Cadastrar evento', icon: 'add_circle' },
+  { name: 'moderacao', label: 'Moderação', icon: 'task_alt' },
+  { name: 'scraper', label: 'Coleta de dados', icon: 'sync' },
+]
+
+const produtoresAtivo = computed(() =>
+  produtoresItems.some((i) => route.name === i.name)
+)
 
 const precoOptions = [
   { label: 'Gratuito', value: 'gratuito' },
@@ -414,23 +436,23 @@ onMounted(() => store.fetchEvents())
   }
 }
 
-.search-bar {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px 14px;
-  width: 100%;
+.toolbar-search {
+  width: 360px;
+  margin: 0 16px;
+  flex-shrink: 1;
 }
 
-.search-input {
-  max-width: 460px;
+.toolbar-search__input {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
-  padding: 0 18px;
+  padding: 0 14px;
   transition: border-color 0.2s ease;
+  font-size: 0.88rem;
 
   &:focus-within {
     border-color: rgba(94, 234, 212, 0.5);
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -443,51 +465,109 @@ onMounted(() => store.fetchEvents())
 .footer-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 28px 16px 24px;
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 32px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.footer-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
 }
 
 .footer-tagline {
-  margin: 12px 0 0;
-  font-size: 0.9rem;
-  line-height: 1.65;
-  max-width: 360px;
-}
-
-.footer-heading {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(248, 250, 252, 0.85);
-  margin-bottom: 4px;
-}
-
-.footer-link {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: var(--oa-muted);
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-wrap: wrap;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+}
+/* ---- Dropdown Produtores ---- */
+.nav-dropdown {
+  position: relative;
+
+  &:hover .nav-dropdown__menu,
+  &:focus-within .nav-dropdown__menu {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+}
+
+.nav-link--btn {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-dropdown__arrow {
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: #04101d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 200;
+}
+
+.nav-dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.72);
   text-decoration: none;
-  font-size: 0.92rem;
-  transition: color 0.2s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 
   &:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+  }
+
+  &--active {
     color: var(--oa-accent);
+    background: rgba(94, 234, 212, 0.08);
   }
 }
 
-@media (max-width: 768px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
 </style>
 
 <!-- CSS global para os drawers: sem scoped para alcançar elementos do Quasar -->
