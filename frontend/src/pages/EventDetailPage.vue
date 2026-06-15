@@ -1,7 +1,24 @@
 <template>
   <q-page class="bg-landing">
     <div class="main-container page-content">
-      <LoadingState v-if="loading" />
+
+      <!-- Skeleton enquanto carrega -->
+      <template v-if="loading">
+        <div class="detail-skeleton">
+          <div class="sk sk--back" />
+          <div class="sk sk--chips" />
+          <div class="sk sk--title" />
+          <div class="sk sk--title sk--title-short" />
+          <div class="sk sk--image" />
+          <div class="sk sk--meta" />
+          <div class="sk sk--meta sk--meta-short" />
+          <div class="sk sk--meta sk--meta-short" />
+          <div class="sk sk--desc" />
+          <div class="sk sk--desc" />
+          <div class="sk sk--desc sk--desc-short" />
+          <div class="sk sk--actions" />
+        </div>
+      </template>
 
       <template v-else-if="event">
         <BackButton :to="{ name: 'home' }" label="Voltar à agenda" />
@@ -34,6 +51,9 @@
             <div v-if="event.dateLabel"><q-icon name="event" class="q-mr-sm" />{{ event.dateLabel }}</div>
             <div v-if="event.timeLabel"><q-icon name="schedule" class="q-mr-sm" />{{ event.timeLabel }}</div>
             <div v-if="event.location"><q-icon name="place" class="q-mr-sm" />{{ event.location }}</div>
+            <div v-if="event.organizador" class="detail-meta__organizador">
+              <q-icon name="person" class="q-mr-sm" />Organizado por <strong>{{ event.organizador }}</strong>
+            </div>
           </div>
 
           <p v-if="event.description" class="detail-desc">{{ event.description }}</p>
@@ -95,6 +115,14 @@
         :button-to="{ name: 'home' }"
       />
     </div>
+
+    <!-- Toast de link copiado -->
+    <transition name="toast">
+      <div v-if="toastVisible" class="copy-toast" role="status" aria-live="polite">
+        <q-icon name="check_circle" size="18px" />
+        Link copiado!
+      </div>
+    </transition>
   </q-page>
 </template>
 
@@ -104,7 +132,6 @@ import { useRoute } from 'vue-router'
 import { useEventsStore } from 'src/stores/events'
 import { categoryColor } from 'src/utils/eventMapper'
 import BackButton from 'components/BackButton.vue'
-import LoadingState from 'components/LoadingState.vue'
 import EmptyState from 'components/EmptyState.vue'
 
 const route = useRoute()
@@ -112,6 +139,7 @@ const store = useEventsStore()
 
 const event = ref(null)
 const loading = ref(true)
+const toastVisible = ref(false)
 
 const sourceLabelMap = {
   ticketpe: 'via TicketPE',
@@ -144,13 +172,17 @@ function abrirMaps() {
   window.open(`https://www.google.com/maps/search/?api=1&query=${q}`, '_blank')
 }
 
+function showToast() {
+  toastVisible.value = true
+  setTimeout(() => { toastVisible.value = false }, 2200)
+}
+
 function compartilharLink() {
   const url = window.location.href
-  if (navigator.share) navigator.share({ title: event.value?.title, url })
-  else {
-    navigator.clipboard.writeText(url)
-    // feedback visual via Quasar Notify se disponível
-    if (window.Quasar) window.Quasar.Notify.create({ message: 'Link copiado!', color: 'dark', timeout: 1800 })
+  if (navigator.share) {
+    navigator.share({ title: event.value?.title, url })
+  } else {
+    navigator.clipboard.writeText(url).then(showToast).catch(() => showToast())
   }
 }
 
@@ -158,9 +190,7 @@ function compartilharWhatsApp() {
   const url = window.location.href
   const ev = event.value
   const texto = ev?.title
-    ? `Olha esse evento que encontrei no Onde Acontece Recife 👀
-*${ev.title}*
-${ev.dateLabel ? ev.dateLabel + '\n' : ''}${url}`
+    ? `Olha esse evento que encontrei no Onde Acontece Recife 👀\n*${ev.title}*\n${ev.dateLabel ? ev.dateLabel + '\n' : ''}${url}`
     : url
   window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank')
 }
@@ -184,6 +214,43 @@ onMounted(async () => {
   max-width: 800px;
 }
 
+/* ---- Skeleton ---- */
+@keyframes shimmer {
+  0%   { background-position: -800px 0; }
+  100% { background-position:  800px 0; }
+}
+
+.detail-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.sk {
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.04) 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.sk--back      { height: 32px; width: 120px; border-radius: 999px; }
+.sk--chips     { height: 28px; width: 220px; }
+.sk--title     { height: 48px; width: 90%; }
+.sk--title-short { width: 60%; }
+.sk--image     { height: 320px; border-radius: 16px; }
+.sk--meta      { height: 20px; width: 70%; }
+.sk--meta-short { width: 45%; }
+.sk--desc      { height: 18px; width: 100%; }
+.sk--desc-short { width: 75%; }
+.sk--actions   { height: 44px; width: 340px; border-radius: 8px; margin-top: 8px; }
+
+/* ---- Detalhe ---- */
 .detail-stripe {
   height: 4px;
   border-radius: 4px;
@@ -202,6 +269,11 @@ onMounted(async () => {
   gap: 8px;
   color: var(--oa-muted);
   margin: 16px 0;
+
+  &__organizador {
+    color: rgba(248, 250, 252, 0.75);
+    strong { color: #fff; }
+  }
 }
 
 .detail-desc {
@@ -232,6 +304,8 @@ onMounted(async () => {
   color: var(--oa-accent);
   overflow-x: auto;
 }
+
+/* ---- WhatsApp ---- */
 .whatsapp-btn {
   display: inline-flex;
   align-items: center;
@@ -259,4 +333,27 @@ onMounted(async () => {
   fill: #25d366;
   flex-shrink: 0;
 }
+
+/* ---- Toast ---- */
+.copy-toast {
+  position: fixed;
+  bottom: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1e3a4a;
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  color: var(--oa-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.toast-enter-active, .toast-leave-active { transition: opacity 0.25s ease, transform 0.25s ease; }
+.toast-enter-from, .toast-leave-to { opacity: 0; transform: translateX(-50%) translateY(8px); }
 </style>
