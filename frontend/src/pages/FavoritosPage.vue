@@ -5,15 +5,22 @@
 
       <LoadingState v-if="store.loading" message="Carregando favoritos..." />
 
-      <div v-else-if="store.eventosFavoritos.length" class="cards-grid">
-        <EventCard
-          v-for="card in store.eventosFavoritos"
-          :key="card.id"
-          :event="card"
-          variant="grid"
-          @click="goToEvent(card)"
-        />
-      </div>
+      <template v-else-if="store.eventosFavoritos.length">
+        <p class="favoritos-count">
+          {{ store.eventosFavoritos.length }}
+          {{ store.eventosFavoritos.length === 1 ? 'evento salvo' : 'eventos salvos' }}
+        </p>
+
+        <div class="cards-grid">
+          <EventCard
+            v-for="card in store.eventosFavoritos"
+            :key="card.id"
+            :event="card"
+            variant="grid"
+            @click="goToEvent(card)"
+          />
+        </div>
+      </template>
 
       <EmptyState
         v-else
@@ -49,5 +56,11 @@ onMounted(() => store.fetchEvents())
 .page-content {
   padding-top: 16px;
   padding-bottom: 48px;
+}
+
+.favoritos-count {
+  font-size: 0.88rem;
+  color: var(--oa-muted);
+  margin: 0 0 20px;
 }
 </style>
