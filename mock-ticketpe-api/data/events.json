@@ -1,0 +1,54 @@
+[
+  {
+    "id": 101,
+    "title": "Samba no Recife Antigo",
+    "slug": "samba-no-recife-antigo",
+    "description": "Roda de samba aberta ao público no centro histórico, com grupos locais e convidados.",
+    "highlight": "Entrada gratuita no Marco Zero",
+    "price": 0,
+    "tags": [{ "name": "Música" }],
+    "city": "Recife",
+    "location": "Marco Zero, Recife Antigo",
+    "start_date": "2026-06-20 18:00:00",
+    "image_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800"
+  },
+  {
+    "id": 102,
+    "title": "Mostra de Teatro da Zona Norte",
+    "slug": "mostra-de-teatro-da-zona-norte",
+    "description": "Espetáculos independentes com grupos locais em temporada curta no Teatro Apolo.",
+    "highlight": "Temporada com 4 peças inéditas",
+    "price": 30,
+    "tags": [{ "name": "Teatro" }],
+    "city": "Recife",
+    "location": "Teatro Apolo, Casa Amarela",
+    "start_date": "2026-06-21 20:00:00",
+    "image_url": "https://images.unsplash.com/photo-1503095396549-7595b784d3af?w=800"
+  },
+  {
+    "id": 103,
+    "title": "Feira de Artesanato de Boa Viagem",
+    "slug": "feira-artesanato-boa-viagem",
+    "description": "Artistas pernambucanos expõem cerâmica, renda e esculturas na orla.",
+    "highlight": "Feira ao ar livre todos os sábados",
+    "price": 0,
+    "tags": [{ "name": "Artes" }],
+    "city": "Recife",
+    "location": "Praia de Boa Viagem",
+    "start_date": "2026-06-22 10:00:00",
+    "image_url": "https://images.unsplash.com/photo-1459749411175-04bf52929825?w=800"
+  },
+  {
+    "id": 104,
+    "title": "Stand-up no Porto Digital",
+    "slug": "stand-up-porto-digital",
+    "description": "Noite de comédia com humoristas recifenses em formato open mic + atrações confirmadas.",
+    "highlight": "Lotação limitada — compre antecipado",
+    "price": 45,
+    "tags": [{ "name": "Comédia" }],
+    "city": "Recife",
+    "location": "Porto Digital, Recife Antigo",
+    "start_date": "2026-06-25 21:00:00",
+    "image_url": "https://images.unsplash.com/photo-1585699323591-0f9482f00627?w=800"
+  }
+]

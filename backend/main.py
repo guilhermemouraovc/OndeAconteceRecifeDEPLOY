@@ -18,9 +18,11 @@ from ml.classifier import predict_gratuito_pago
 from pipeline import process_event_dict
 from scrapers import run_all as _run_scrapers
 from scrapers.ticketpe import scrape as _scrape_ticketpe
+from dotenv import load_dotenv
 from storage.events_store import EventsStore
 
 BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
 DATA_DIR = BASE_DIR / "data"
 UPLOADS_DIR = BASE_DIR / "uploads"
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
