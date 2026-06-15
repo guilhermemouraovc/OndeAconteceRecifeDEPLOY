@@ -5,6 +5,7 @@
       color="accent"
       icon="smart_toy"
       class="chatbot-fab"
+      :style="{ bottom: fabBottom }"
       aria-label="Abrir chatbot"
       @click="open = !open"
     />
@@ -74,13 +75,43 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { useChatbot } from 'src/composables/useChatbot'
 
 const open = ref(false)
 const draft = ref('')
 const suggestions = ['Eventos gratuitos', 'Teatro no Recife', 'O que tem hoje?']
 const { loading, error, messages, sendMessage } = useChatbot()
+
+const fabBottom = ref('20px')
+let observer = null
+
+function updateFabPosition() {
+  const footer = document.querySelector('.oa-footer')
+  if (footer) {
+    const h = footer.getBoundingClientRect().height
+    fabBottom.value = `${h + 16}px`
+  } else {
+    fabBottom.value = '20px'
+  }
+}
+
+onMounted(() => {
+  updateFabPosition()
+
+  const footer = document.querySelector('.oa-footer')
+  if (footer && window.ResizeObserver) {
+    observer = new ResizeObserver(updateFabPosition)
+    observer.observe(footer)
+  }
+
+  window.addEventListener('resize', updateFabPosition)
+})
+
+onUnmounted(() => {
+  observer?.disconnect()
+  window.removeEventListener('resize', updateFabPosition)
+})
 
 async function submit() {
   const text = draft.value.trim()
@@ -97,8 +128,6 @@ async function useSuggestion(text) {
 </script>
 
 <style lang="scss">
-/* Sem scoped: o Quasar aplica esta classe num elemento interno do QDrawer
-   que nao recebe o atributo de escopo do Vue. */
 .chatbot-drawer {
   background: #0b1624 !important;
   color: var(--oa-text);
@@ -109,8 +138,8 @@ async function useSuggestion(text) {
 .chatbot-fab {
   position: fixed;
   right: 20px;
-  bottom: 20px;
   z-index: 1200;
+  transition: bottom 0.2s ease;
 }
 
 .chatbot-shell {
