@@ -206,7 +206,6 @@
           <router-link :to="{ name: 'scraper' }" class="footer-link">Coleta de dados</router-link>
         </div>
       </div>
-      <div class="footer-bottom">CESAR School · 2026 · Projeto acadêmico</div>
     </q-footer>
   </q-layout>
 </template>
@@ -431,7 +430,7 @@ onMounted(() => store.fetchEvents())
 .footer-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 40px 16px 28px;
+  padding: 28px 16px 24px;
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr;
   gap: 32px;
@@ -470,14 +469,6 @@ onMounted(() => store.fetchEvents())
   }
 }
 
-.footer-bottom {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 0.8rem;
-  text-align: center;
-}
 
 @media (max-width: 768px) {
   .footer-inner {
