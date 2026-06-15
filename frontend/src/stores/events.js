@@ -20,6 +20,11 @@ export const useEventsStore = defineStore('events', () => {
   const filterData = ref('')
   const filterAgora = ref(false)
 
+  const sortOrder = ref('data')
+
+  const PAGE_SIZE = 20
+  const visibleCount = ref(PAGE_SIZE)
+
   const _stored = localStorage.getItem('oa_favoritos')
   const favoritos = ref(_stored ? JSON.parse(_stored) : [])
 
@@ -86,7 +91,7 @@ export const useEventsStore = defineStore('events', () => {
       })
     }
 
-    return list.filter((ev) => {
+    list = list.filter((ev) => {
       if (filterCategoria.value) {
         const cat = (ev.categoria || '').toLowerCase()
         if (!cat.includes(filterCategoria.value.toLowerCase())) return false
@@ -129,9 +134,57 @@ export const useEventsStore = defineStore('events', () => {
       }
       return true
     })
+
+    // Ordenação
+    const sorted = [...list]
+    if (sortOrder.value === 'data') {
+      sorted.sort((a, b) => {
+        const da = _parseEvtDate(a.inicio_iso)
+        const db = _parseEvtDate(b.inicio_iso)
+        if (!da && !db) return 0
+        if (!da) return 1
+        if (!db) return -1
+        return da - db
+      })
+    } else if (sortOrder.value === 'preco_asc') {
+      sorted.sort((a, b) => {
+        const pa = a.gratuito || a.preco === 0 ? 0 : (a.preco ?? Infinity)
+        const pb = b.gratuito || b.preco === 0 ? 0 : (b.preco ?? Infinity)
+        return pa - pb
+      })
+    } else if (sortOrder.value === 'preco_desc') {
+      sorted.sort((a, b) => {
+        const pa = a.preco ?? -1
+        const pb = b.preco ?? -1
+        return pb - pa
+      })
+    }
+
+    return sorted
   })
 
-  const eventCards = computed(() => filteredEvents.value.map(toEventCardFromApi))
+  // Total sem paginação (para mostrar "X de Y")
+  const totalFilteredCount = computed(() => filteredEvents.value.length)
+
+  // Eventos paginados
+  const filteredEventsPaged = computed(() =>
+    filteredEvents.value.slice(0, visibleCount.value),
+  )
+
+  const eventCards = computed(() => filteredEventsPaged.value.map(toEventCardFromApi))
+
+  // Todos os cards sem paginação (usado na home)
+  const allEventCards = computed(() => filteredEvents.value.map(toEventCardFromApi))
+
+  const hasMore = computed(() => visibleCount.value < filteredEvents.value.length)
+
+  function loadMore() {
+    visibleCount.value += PAGE_SIZE
+  }
+
+  function resetPagination() {
+    visibleCount.value = PAGE_SIZE
+  }
 
   const eventosFavoritos = computed(() =>
     allEvents.value.filter((ev) => favoritos.value.includes(ev.titulo)).map(toEventCardFromApi),
@@ -161,7 +214,7 @@ export const useEventsStore = defineStore('events', () => {
 
   const eventsByCategory = computed(() => {
     const map = new Map()
-    for (const card of eventCards.value) {
+    for (const card of allEventCards.value) {
       const cat = card.categoria || 'Outros'
       if (!map.has(cat)) map.set(cat, [])
       map.get(cat).push(card)
@@ -176,6 +229,7 @@ export const useEventsStore = defineStore('events', () => {
     filterData.value = ''
     filterAgora.value = false
     searchQuery.value = ''
+    resetPagination()
   }
 
   function getEventoBySlug(slug) {
@@ -200,8 +254,15 @@ export const useEventsStore = defineStore('events', () => {
     filterBairro,
     filterData,
     filterAgora,
+    sortOrder,
     filteredEvents,
+    filteredEventsPaged,
+    totalFilteredCount,
     eventCards,
+    allEventCards,
+    hasMore,
+    loadMore,
+    resetPagination,
     eventosFavoritos,
     hasActiveFilters,
     bairrosDisponiveis,
