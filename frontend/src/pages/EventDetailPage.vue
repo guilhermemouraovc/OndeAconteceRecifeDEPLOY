@@ -65,7 +65,8 @@
               no-caps
               @click="toggleFav"
             />
-            <q-btn flat color="grey-4" icon="share" label="Compartilhar" no-caps @click="compartilhar" />
+            <q-btn flat color="grey-4" icon="share" label="Compartilhar link" no-caps @click="compartilharLink" />
+            <q-btn flat color="positive" icon="chat" label="WhatsApp" no-caps @click="compartilharWhatsApp" />
           </div>
 
           <q-expansion-item
@@ -137,10 +138,25 @@ function abrirMaps() {
   window.open(`https://www.google.com/maps/search/?api=1&query=${q}`, '_blank')
 }
 
-function compartilhar() {
+function compartilharLink() {
   const url = window.location.href
   if (navigator.share) navigator.share({ title: event.value?.title, url })
-  else navigator.clipboard.writeText(url)
+  else {
+    navigator.clipboard.writeText(url)
+    // feedback visual via Quasar Notify se disponível
+    if (window.Quasar) window.Quasar.Notify.create({ message: 'Link copiado!', color: 'dark', timeout: 1800 })
+  }
+}
+
+function compartilharWhatsApp() {
+  const url = window.location.href
+  const ev = event.value
+  const texto = ev?.title
+    ? `Olha esse evento que encontrei no Onde Acontece Recife 👀
+*${ev.title}*
+${ev.dateLabel ? ev.dateLabel + '\n' : ''}${url}`
+    : url
+  window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank')
 }
 
 onMounted(async () => {
