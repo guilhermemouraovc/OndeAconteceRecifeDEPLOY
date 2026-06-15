@@ -1,0 +1,50 @@
+[
+  {
+    "id": "216a748d-501c-43d1-9e74-d09f96b0fd10",
+    "title": "Carvalheira na fogueira",
+    "slug": "carvalheira-na-fogueira",
+    "description": "Festival com programação de sexta e sábado em Vila Forró.",
+    "highlight": "sim",
+    "start_date": "2026-06-19 15:00:00",
+    "end_date": "2026-06-20 15:00:00",
+    "location": "Vila Forró",
+    "city": "Lagoa Seca",
+    "state": "PB",
+    "price": null,
+    "currency": "BRL",
+    "image_url": "https://i.postimg.cc/Hk1f72yk/vilafogueira-card-banner.webp",
+    "tags": [{ "name": "Festival" }]
+  },
+  {
+    "id": "abdc7823-5835-41b7-ae73-0eadb30ea6fc",
+    "title": "GINGA RECIFE",
+    "slug": "ginga-recife",
+    "description": "A Ginga Recife é o melhor projeto de transmissão da Copa do Mundo na cidade, reunindo torcida, música e esporte em uma arena totalmente preparada para transformar cada jogo do Brasil em um dia completo de experiência.",
+    "highlight": "sim",
+    "start_date": "2026-06-13 15:00:00",
+    "end_date": "2026-07-19 15:00:00",
+    "location": "Mirante do Paço",
+    "city": "Recife",
+    "state": "PE",
+    "price": null,
+    "currency": "BRL",
+    "image_url": "https://i.postimg.cc/W4yrrK4L/ginga-recife.webp",
+    "tags": [{ "name": "Música" }]
+  },
+  {
+    "id": "c1fd9b8f-8362-4d9c-8890-060928248e4e",
+    "title": "Wedo na copa",
+    "slug": "wedo-na-copa",
+    "description": "DIA 13 DE JUNHO, A SELEÇÃO BRASILEIRA ENTRA EM CAMPO PARA SUA ESTREIA NA COPA DO MUNDO DE 2026! E O TIME DA WEDO ENTRA JUNTO COM TODOS OS BRASILEIROS!",
+    "highlight": "sim",
+    "start_date": "2026-06-13 19:00:00",
+    "end_date": "2026-06-14 02:00:00",
+    "location": "Arena Boa Viagem BTG Pactual",
+    "city": "Recife",
+    "state": "PE",
+    "price": 200.0,
+    "currency": "BRL",
+    "image_url": "https://i.postimg.cc/J45XnvDh/wedo-nacopa-banner.webp",
+    "tags": [{ "name": "Música" }]
+  }
+]
