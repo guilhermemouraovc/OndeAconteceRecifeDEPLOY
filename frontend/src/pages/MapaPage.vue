@@ -23,6 +23,22 @@
 
       <div class="map-wrap">
         <q-inner-loading :showing="loadingMap" color="primary" />
+
+        <!-- Empty state: mapa carregou mas não há eventos com coordenadas -->
+        <transition name="fade">
+          <div v-if="!loadingMap && !mapError && eventosNoMapa === 0" class="map-empty">
+            <q-icon name="location_off" size="40px" class="map-empty__icon" />
+            <p class="map-empty__title">Nenhum evento com localização</p>
+            <p class="map-empty__sub">
+              Os eventos disponíveis ainda não têm coordenadas cadastradas.
+            </p>
+            <router-link :to="{ name: 'programacao' }" class="map-empty__link">
+              Ver lista de eventos
+              <q-icon name="arrow_forward" size="14px" />
+            </router-link>
+          </div>
+        </transition>
+
         <div ref="mapContainer" class="map-container" aria-label="Mapa de eventos em Recife" />
       </div>
 
@@ -45,7 +61,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
 import { useEventsStore } from 'src/stores/events'
 import { categoryColor } from 'src/utils/eventMapper'
 import { generateSlug } from 'src/utils/stringUtils'
@@ -70,6 +86,11 @@ const legenda = [
   { cat: 'Exposição', cor: '#fcd34d' },
   { cat: 'Outros', cor: '#94a3b8' },
 ]
+
+// Conta eventos que têm coordenadas — usado para o empty state
+const eventosNoMapa = computed(() =>
+  store.allEvents.filter((ev) => ev.lat && ev.lng).length,
+)
 
 function addMarkers() {
   if (!map || !window.mapboxgl) return
@@ -195,6 +216,68 @@ watch(() => store.allEvents.length, () => addMarkers())
 .map-container {
   width: 100%;
   height: 100%;
+}
+
+/* ---- Empty state do mapa ---- */
+.map-empty {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(4, 16, 29, 0.82);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  padding: 32px;
+}
+
+.map-empty__icon {
+  color: var(--oa-muted);
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.map-empty__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.map-empty__sub {
+  font-size: 0.88rem;
+  color: var(--oa-muted);
+  max-width: 300px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.map-empty__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--oa-accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .legenda {

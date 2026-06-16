@@ -6,10 +6,11 @@
       <q-card flat bordered class="form-card">
         <q-card-section>
           <p class="form-intro">
-            Envie um flyer e revise manualmente os dados do evento. O cadastro vai para moderacao
+            Envie um flyer e revise manualmente os dados do evento. O cadastro vai para moderação
             antes de aparecer no feed.
           </p>
 
+          <!-- Upload de flyer -->
           <div class="upload-block q-mb-lg">
             <q-file
               v-model="flyerFile"
@@ -24,7 +25,8 @@
             <div class="upload-actions">
               <q-btn
                 color="secondary"
-                label="Preparar flyer"
+                label="Preencher via flyer"
+                icon="auto_fix_high"
                 no-caps
                 unelevated
                 :disable="!flyerFile"
@@ -32,16 +34,21 @@
                 @click="prepareFlyer"
               />
               <q-badge v-if="flyerPath" color="accent" text-color="dark" rounded>
-                Enviado via flyer
+                Preenchido via flyer
               </q-badge>
             </div>
 
             <q-img v-if="flyerPreviewUrl" :src="flyerPreviewUrl" class="flyer-preview" fit="contain" />
           </div>
 
-          <q-form class="q-gutter-md" @submit.prevent="onSubmit">
-            <q-input v-model="form.titulo" label="Titulo *" outlined dark dense />
-            <q-input v-model="form.descricao" label="Descricao" type="textarea" outlined dark autogrow />
+          <div class="q-gutter-md">
+            <!-- Título -->
+            <q-input v-model="form.titulo" label="Título *" outlined dark dense />
+
+            <!-- Descrição -->
+            <q-input v-model="form.descricao" label="Descrição" type="textarea" outlined dark autogrow />
+
+            <!-- Categoria -->
             <q-select
               v-model="form.categoria"
               :options="categorias"
@@ -51,34 +58,110 @@
               dense
               clearable
             />
-            <q-input v-model="form.bairro" label="Bairro" outlined dark dense />
-            <q-input v-model="form.local" label="Local" outlined dark dense />
-            <q-input v-model="form.inicio_iso" label="Data/hora (ISO)" hint="Ex: 2026-06-15T19:00" outlined dark dense />
-            <q-input v-model="form.preco" label="Preco (R$)" type="number" outlined dark dense />
-            <q-toggle v-model="form.gratuito" label="Evento gratuito" color="primary" dark />
+
+            <!-- Bairro + Local -->
+            <div class="form-row">
+              <q-input v-model="form.bairro" label="Bairro" outlined dark dense class="col" />
+              <q-input v-model="form.local" label="Local / Endereço" outlined dark dense class="col" />
+            </div>
+
+            <!-- Data e Hora — picker visual -->
+            <div class="form-row">
+              <q-input
+                v-model="form.data"
+                label="Data *"
+                outlined
+                dark
+                dense
+                class="col"
+                readonly
+              >
+                <template #append>
+                  <q-icon name="event" class="cursor-pointer">
+                    <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+                      <q-date
+                        v-model="form.data"
+                        mask="YYYY-MM-DD"
+                        dark
+                        color="primary"
+                        :locale="ptBRLocale"
+                        minimal
+                      />
+                    </q-popup-proxy>
+                  </q-icon>
+                </template>
+              </q-input>
+
+              <q-input
+                v-model="form.hora"
+                label="Horário"
+                outlined
+                dark
+                dense
+                class="col"
+                readonly
+              >
+                <template #append>
+                  <q-icon name="schedule" class="cursor-pointer">
+                    <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+                      <q-time
+                        v-model="form.hora"
+                        mask="HH:mm"
+                        dark
+                        color="primary"
+                        format24h
+                      />
+                    </q-popup-proxy>
+                  </q-icon>
+                </template>
+              </q-input>
+            </div>
+
+            <!-- Preço -->
+            <div class="form-row">
+              <q-input
+                v-model="form.preco"
+                label="Preço (R$)"
+                type="number"
+                outlined
+                dark
+                dense
+                class="col"
+                :disable="form.gratuito"
+              />
+              <div class="col gratuito-toggle">
+                <q-toggle v-model="form.gratuito" label="Evento gratuito" color="primary" dark />
+              </div>
+            </div>
+
+            <!-- Observações do flyer -->
             <q-input
               v-model="form.observacoes_flyer"
-              label="Observacoes do flyer"
+              label="Observações do flyer"
               type="textarea"
               outlined
               dark
               autogrow
             />
-            <q-input v-model="form.organizador" label="Organizador *" outlined dark dense />
-            <q-input v-model="form.email_contato" label="E-mail de contato *" type="email" outlined dark dense />
+
+            <!-- Organizador + e-mail -->
+            <div class="form-row">
+              <q-input v-model="form.organizador" label="Organizador *" outlined dark dense class="col" />
+              <q-input v-model="form.email_contato" label="E-mail de contato *" type="email" outlined dark dense class="col" />
+            </div>
 
             <q-banner v-if="error" class="bg-negative text-white" dense rounded>{{ error }}</q-banner>
             <q-banner v-if="message" class="bg-positive text-white" dense rounded>{{ message }}</q-banner>
 
             <q-btn
-              type="submit"
               color="primary"
-              label="Enviar para moderacao"
+              label="Enviar para moderação"
               no-caps
               unelevated
               :loading="loading"
+              @click="onSubmit"
             />
-          </q-form>
+          </div>
         </q-card-section>
       </q-card>
     </div>
@@ -86,7 +169,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref, watch } from 'vue'
 import { useApi } from 'src/composables/useApi'
 import { useEventsStore } from 'src/stores/events'
 import { PRODUCER_CATEGORIES } from 'src/constants/config'
@@ -96,17 +179,20 @@ const { postJson, postFormData, base } = useApi()
 const store = useEventsStore()
 
 const categorias = PRODUCER_CATEGORIES
+
 const flyerFile = ref(null)
 const flyerPath = ref('')
 const flyerPreviewUrl = ref('')
 const uploadingFlyer = ref(false)
+
 const form = reactive({
   titulo: '',
   descricao: '',
   categoria: '',
   bairro: '',
   local: '',
-  inicio_iso: '',
+  data: '',   // YYYY-MM-DD
+  hora: '',   // HH:mm
   preco: '',
   gratuito: false,
   observacoes_flyer: '',
@@ -114,14 +200,31 @@ const form = reactive({
   email_contato: '',
 })
 
+// Zera preço quando gratuito é marcado
+watch(() => form.gratuito, (val) => { if (val) form.preco = '' })
+
+// Monta inicio_iso a partir de data + hora
+const inicio_iso = computed(() => {
+  if (!form.data) return ''
+  return form.hora ? `${form.data}T${form.hora}` : `${form.data}T00:00`
+})
+
+const ptBRLocale = {
+  days: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+  daysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+  months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  firstDayOfWeek: 0,
+}
+
 const loading = ref(false)
 const message = ref('')
 const error = ref('')
 
 function validate() {
-  if (form.titulo.trim().length < 3) return 'Informe um titulo com pelo menos 3 caracteres.'
+  if (form.titulo.trim().length < 3) return 'Informe um título com pelo menos 3 caracteres.'
   if (!form.organizador.trim()) return 'Informe o organizador.'
-  if (!form.email_contato.includes('@')) return 'Informe um e-mail valido.'
+  if (!form.email_contato.includes('@')) return 'Informe um e-mail válido.'
   return ''
 }
 
@@ -135,10 +238,24 @@ async function prepareFlyer() {
     const data = await postFormData('/events/flyer/preview', payload)
     flyerPath.value = data.flyer_path
     flyerPreviewUrl.value = `${base}${data.flyer_url}`
-    Object.assign(form, {
-      ...form,
-      ...data.campos_sugeridos,
-    })
+
+    // Preenche campos com sugestões do OCR
+    const s = data.campos_sugeridos || {}
+    if (s.titulo) form.titulo = s.titulo
+    if (s.descricao) form.descricao = s.descricao
+    if (s.categoria) form.categoria = s.categoria
+    if (s.bairro) form.bairro = s.bairro
+    if (s.local) form.local = s.local
+    if (s.organizador) form.organizador = s.organizador
+    if (s.observacoes_flyer) form.observacoes_flyer = s.observacoes_flyer
+    // Tenta extrair data e hora do inicio_iso sugerido
+    if (s.inicio_iso) {
+      const [datePart, timePart] = s.inicio_iso.split('T')
+      if (datePart) form.data = datePart
+      if (timePart) form.hora = timePart.slice(0, 5)
+    }
+    if (s.preco != null) form.preco = String(s.preco)
+    if (s.gratuito != null) form.gratuito = Boolean(s.gratuito)
   } catch (e) {
     error.value = e instanceof Error ? e.message : 'Erro ao preparar flyer.'
   } finally {
@@ -150,10 +267,7 @@ async function onSubmit() {
   message.value = ''
   error.value = ''
   const v = validate()
-  if (v) {
-    error.value = v
-    return
-  }
+  if (v) { error.value = v; return }
 
   loading.value = true
   try {
@@ -164,7 +278,7 @@ async function onSubmit() {
       categoria: form.categoria || null,
       bairro: form.bairro.trim() || null,
       local: form.local.trim(),
-      inicio_iso: form.inicio_iso.trim() || null,
+      inicio_iso: inicio_iso.value || null,
       preco: Number.isFinite(preco) ? preco : null,
       gratuito: form.gratuito || null,
       observacoes_flyer: form.observacoes_flyer.trim() || null,
@@ -176,22 +290,14 @@ async function onSubmit() {
     if (flyerPath.value) await postJson('/events/flyer/submit', payload)
     else await postJson('/events', payload)
 
-    message.value = 'Evento enviado para moderacao.'
+    message.value = 'Evento enviado para moderação com sucesso!'
     flyerFile.value = null
     flyerPath.value = ''
     flyerPreviewUrl.value = ''
     Object.assign(form, {
-      titulo: '',
-      descricao: '',
-      categoria: '',
-      bairro: '',
-      local: '',
-      inicio_iso: '',
-      preco: '',
-      gratuito: false,
-      observacoes_flyer: '',
-      organizador: '',
-      email_contato: '',
+      titulo: '', descricao: '', categoria: '', bairro: '', local: '',
+      data: '', hora: '', preco: '', gratuito: false,
+      observacoes_flyer: '', organizador: '', email_contato: '',
     })
     await store.fetchEvents(true)
   } catch (e) {
@@ -238,5 +344,22 @@ async function onSubmit() {
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.04);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.gratuito-toggle {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

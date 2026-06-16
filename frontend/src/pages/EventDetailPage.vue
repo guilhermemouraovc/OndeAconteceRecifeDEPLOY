@@ -1,7 +1,24 @@
 <template>
   <q-page class="bg-landing">
     <div class="main-container page-content">
-      <LoadingState v-if="loading" />
+
+      <!-- Skeleton enquanto carrega -->
+      <template v-if="loading">
+        <div class="detail-skeleton">
+          <div class="sk sk--back" />
+          <div class="sk sk--chips" />
+          <div class="sk sk--title" />
+          <div class="sk sk--title sk--title-short" />
+          <div class="sk sk--image" />
+          <div class="sk sk--meta" />
+          <div class="sk sk--meta sk--meta-short" />
+          <div class="sk sk--meta sk--meta-short" />
+          <div class="sk sk--desc" />
+          <div class="sk sk--desc" />
+          <div class="sk sk--desc sk--desc-short" />
+          <div class="sk sk--actions" />
+        </div>
+      </template>
 
       <template v-else-if="event">
         <BackButton :to="{ name: 'home' }" label="Voltar à agenda" />
@@ -34,6 +51,9 @@
             <div v-if="event.dateLabel"><q-icon name="event" class="q-mr-sm" />{{ event.dateLabel }}</div>
             <div v-if="event.timeLabel"><q-icon name="schedule" class="q-mr-sm" />{{ event.timeLabel }}</div>
             <div v-if="event.location"><q-icon name="place" class="q-mr-sm" />{{ event.location }}</div>
+            <div v-if="event.organizador" class="detail-meta__organizador">
+              <q-icon name="person" class="q-mr-sm" />Organizado por <strong>{{ event.organizador }}</strong>
+            </div>
           </div>
 
           <p v-if="event.description" class="detail-desc">{{ event.description }}</p>
@@ -65,7 +85,14 @@
               no-caps
               @click="toggleFav"
             />
-            <q-btn flat color="grey-4" icon="share" label="Compartilhar" no-caps @click="compartilhar" />
+            <q-btn flat color="grey-4" icon="share" label="Compartilhar link" no-caps @click="compartilharLink" />
+            <button class="whatsapp-btn" type="button" @click="compartilharWhatsApp">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="whatsapp-btn__icon" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.508 5.84L.057 23.428a.75.75 0 0 0 .921.921l5.588-1.451A11.934 11.934 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.787 9.787 0 0 1-4.997-1.37l-.358-.213-3.716.965.99-3.614-.234-.372A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
+              </svg>
+              WhatsApp
+            </button>
           </div>
 
           <q-expansion-item
@@ -88,6 +115,14 @@
         :button-to="{ name: 'home' }"
       />
     </div>
+
+    <!-- Toast de link copiado -->
+    <transition name="toast">
+      <div v-if="toastVisible" class="copy-toast" role="status" aria-live="polite">
+        <q-icon name="check_circle" size="18px" />
+        Link copiado!
+      </div>
+    </transition>
   </q-page>
 </template>
 
@@ -97,7 +132,6 @@ import { useRoute } from 'vue-router'
 import { useEventsStore } from 'src/stores/events'
 import { categoryColor } from 'src/utils/eventMapper'
 import BackButton from 'components/BackButton.vue'
-import LoadingState from 'components/LoadingState.vue'
 import EmptyState from 'components/EmptyState.vue'
 
 const route = useRoute()
@@ -105,6 +139,7 @@ const store = useEventsStore()
 
 const event = ref(null)
 const loading = ref(true)
+const toastVisible = ref(false)
 
 const sourceLabelMap = {
   ticketpe: 'via TicketPE',
@@ -137,10 +172,27 @@ function abrirMaps() {
   window.open(`https://www.google.com/maps/search/?api=1&query=${q}`, '_blank')
 }
 
-function compartilhar() {
+function showToast() {
+  toastVisible.value = true
+  setTimeout(() => { toastVisible.value = false }, 2200)
+}
+
+function compartilharLink() {
   const url = window.location.href
-  if (navigator.share) navigator.share({ title: event.value?.title, url })
-  else navigator.clipboard.writeText(url)
+  if (navigator.share) {
+    navigator.share({ title: event.value?.title, url })
+  } else {
+    navigator.clipboard.writeText(url).then(showToast).catch(() => showToast())
+  }
+}
+
+function compartilharWhatsApp() {
+  const url = window.location.href
+  const ev = event.value
+  const texto = ev?.title
+    ? `Olha esse evento que encontrei no Onde Acontece Recife 👀\n*${ev.title}*\n${ev.dateLabel ? ev.dateLabel + '\n' : ''}${url}`
+    : url
+  window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank')
 }
 
 onMounted(async () => {
@@ -162,6 +214,43 @@ onMounted(async () => {
   max-width: 800px;
 }
 
+/* ---- Skeleton ---- */
+@keyframes shimmer {
+  0%   { background-position: -800px 0; }
+  100% { background-position:  800px 0; }
+}
+
+.detail-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.sk {
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.04) 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.sk--back      { height: 32px; width: 120px; border-radius: 999px; }
+.sk--chips     { height: 28px; width: 220px; }
+.sk--title     { height: 48px; width: 90%; }
+.sk--title-short { width: 60%; }
+.sk--image     { height: 320px; border-radius: 16px; }
+.sk--meta      { height: 20px; width: 70%; }
+.sk--meta-short { width: 45%; }
+.sk--desc      { height: 18px; width: 100%; }
+.sk--desc-short { width: 75%; }
+.sk--actions   { height: 44px; width: 340px; border-radius: 8px; margin-top: 8px; }
+
+/* ---- Detalhe ---- */
 .detail-stripe {
   height: 4px;
   border-radius: 4px;
@@ -180,6 +269,11 @@ onMounted(async () => {
   gap: 8px;
   color: var(--oa-muted);
   margin: 16px 0;
+
+  &__organizador {
+    color: rgba(248, 250, 252, 0.75);
+    strong { color: #fff; }
+  }
 }
 
 .detail-desc {
@@ -210,4 +304,56 @@ onMounted(async () => {
   color: var(--oa-accent);
   overflow-x: auto;
 }
+
+/* ---- WhatsApp ---- */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: rgba(37, 211, 102, 0.18);
+    border-color: rgba(37, 211, 102, 0.55);
+  }
+}
+
+.whatsapp-btn__icon {
+  width: 18px;
+  height: 18px;
+  fill: #25d366;
+  flex-shrink: 0;
+}
+
+/* ---- Toast ---- */
+.copy-toast {
+  position: fixed;
+  bottom: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1e3a4a;
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  color: var(--oa-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.toast-enter-active, .toast-leave-active { transition: opacity 0.25s ease, transform 0.25s ease; }
+.toast-enter-from, .toast-leave-to { opacity: 0; transform: translateX(-50%) translateY(8px); }
 </style>

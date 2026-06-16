@@ -30,6 +30,17 @@
           <q-icon name="event" size="13px" />
           {{ event.date }}
         </span>
+
+        <!-- Botão de favoritar -->
+        <button
+          class="event-card__fav"
+          :class="{ 'event-card__fav--active': isFav }"
+          type="button"
+          :aria-label="isFav ? 'Remover dos salvos' : 'Salvar evento'"
+          @click.stop="handleFav"
+        >
+          <q-icon :name="isFav ? 'favorite' : 'favorite_border'" size="18px" />
+        </button>
       </div>
 
       <q-card-section class="event-card__body">
@@ -55,6 +66,7 @@
 import { computed, ref } from 'vue'
 import { DEFAULT_IMAGES } from 'src/constants/config'
 import { categoryColor } from 'src/utils/eventMapper'
+import { useEventsStore } from 'src/stores/events'
 
 const props = defineProps({
   event: { type: Object, required: true },
@@ -70,11 +82,13 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['click'])
+const store = useEventsStore()
 
 const touchStartPos = ref({ x: 0, y: 0 })
 const isDragging = ref(false)
 const resolvedImageHeight = computed(() => props.imageHeight ?? '180px')
 const catColor = computed(() => categoryColor(props.event?.categoria))
+const isFav = computed(() => store.isFavorito(props.event?.title))
 
 function handleTouchStart(e) {
   isDragging.value = false
@@ -97,6 +111,11 @@ function handleClick(e) {
     return
   }
   if (props.clickable) emit('click', props.event)
+}
+
+function handleFav(e) {
+  e?.stopPropagation()
+  if (props.event?.title) store.toggleFavorito(props.event.title)
 }
 </script>
 
@@ -179,6 +198,38 @@ function handleClick(e) {
   padding: 4px 10px;
   border-radius: 999px;
   backdrop-filter: blur(4px);
+}
+
+/* ---- Botão de favoritar ---- */
+.event-card__fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(6, 22, 38, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+
+  &:hover {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.15);
+  }
+
+  &--active {
+    color: #f87171;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
 }
 
 .event-card__body {
