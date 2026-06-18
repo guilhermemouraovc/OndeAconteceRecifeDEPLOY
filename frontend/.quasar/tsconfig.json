@@ -48,9 +48,6 @@
       "assets": [
         "./../src/assets"
       ],
-      "assets/*": [
-        "./../src/assets/*"
-      ],
       "boot": [
         "./../src/boot"
       ],
