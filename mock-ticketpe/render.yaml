@@ -1,8 +1,2 @@
-services:
-  - type: web
-    name: ticketpe-mock
-    runtime: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /
+# Use o render.yaml na raiz do repositório (deploy dos dois backends juntos).
+# Este arquivo existe só como referência do serviço ticketpe-mock.

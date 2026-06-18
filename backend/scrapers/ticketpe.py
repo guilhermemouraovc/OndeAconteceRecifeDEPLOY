@@ -18,7 +18,10 @@ _HEADERS = {
 
 
 def _base_url() -> str:
-    return os.environ.get("TICKET_API_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
+    url = os.environ.get("TICKET_API_BASE_URL", "http://127.0.0.1:8090").strip().rstrip("/")
+    if url and not url.startswith(("http://", "https://")):
+        url = f"https://{url}"
+    return url
 
 
 def _public_url() -> str:

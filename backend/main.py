@@ -30,9 +30,8 @@ UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="Onde Acontece Recife", version="0.5.0-ciclo3")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
+def _cors_origins() -> list[str]:
+    defaults = [
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://localhost:9000",
@@ -41,7 +40,16 @@ app.add_middleware(
         "http://127.0.0.1:9200",
         "http://localhost:9300",
         "http://127.0.0.1:9300",
-    ],
+    ]
+    extra = os.environ.get("CORS_ORIGINS", "").strip()
+    if not extra:
+        return defaults
+    return defaults + [origin.strip() for origin in extra.split(",") if origin.strip()]
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_cors_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

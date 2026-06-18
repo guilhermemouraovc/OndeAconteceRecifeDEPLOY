@@ -1,0 +1,39 @@
+# Blueprint Render — deploy dos dois backends do monorepo.
+# Dashboard: https://dashboard.render.com/ → New → Blueprint → conectar este repositório.
+services:
+  - type: web
+    name: ticketpe-mock
+    runtime: python
+    plan: free
+    rootDir: mock-ticketpe
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+
+  - type: web
+    name: onde-acontece-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements-prod.txt && python -m ml.train_free_paid
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.11"
+      - key: TICKET_API_BASE_URL
+        fromService:
+          type: web
+          name: ticketpe-mock
+          property: host
+      - key: TICKET_CITY
+        value: Recife
+      - key: TICKET_FETCH_LIMIT
+        value: "10"
+      - key: TICKET_PUBLIC_URL
+        value: https://www.ticketpe.com.br
+      - key: MODERATOR_KEY
+        generateValue: true
+      # Após deploy do frontend no Vercel, adicione a URL aqui (ex.: https://project-t494x.vercel.app)
+      - key: CORS_ORIGINS
+        sync: false
