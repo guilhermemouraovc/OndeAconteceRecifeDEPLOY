@@ -21,12 +21,16 @@ def predict_gratuito_pago(text: str) -> dict:
         return {"pago": 0, "probabilidade_pago": 0.5, "fonte": "vazio"}
 
     if _ARTIFACT.exists():
-        pipe = joblib.load(_ARTIFACT)
-        proba = pipe.predict_proba([text])[0]
-        pred = int(pipe.predict([text])[0])
-        return {
-            "pago": pred,
-            "probabilidade_pago": float(proba[1]),
-            "fonte": "modelo",
-        }
+        try:
+            pipe = joblib.load(_ARTIFACT)
+            proba = pipe.predict_proba([text])[0]
+            pred = int(pipe.predict([text])[0])
+            return {
+                "pago": pred,
+                "probabilidade_pago": float(proba[1]),
+                "fonte": "modelo",
+            }
+        except Exception:
+            return {**_heuristic(text), "fonte": "heuristica-fallback"}
+
     return {**_heuristic(text)}
