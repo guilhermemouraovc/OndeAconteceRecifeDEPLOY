@@ -1,0 +1,1401 @@
+﻿bairro,dia_semana,hora,horario_label,movimentacao_pct
+Boa Viagem,Segunda,18,18:00,10
+Boa Viagem,Segunda,19,19:00,21
+Boa Viagem,Segunda,20,20:00,32
+Boa Viagem,Segunda,21,21:00,25
+Boa Viagem,Segunda,22,22:00,23
+Boa Viagem,Segunda,23,23:00,44
+Boa Viagem,Segunda,0,00:00,23
+Boa Viagem,Segunda,1,01:00,39
+Boa Viagem,Segunda,2,02:00,41
+Boa Viagem,Segunda,3,03:00,33
+Boa Viagem,Terça,18,18:00,6
+Boa Viagem,Terça,19,19:00,35
+Boa Viagem,Terça,20,20:00,24
+Boa Viagem,Terça,21,21:00,38
+Boa Viagem,Terça,22,22:00,47
+Boa Viagem,Terça,23,23:00,40
+Boa Viagem,Terça,0,00:00,38
+Boa Viagem,Terça,1,01:00,58
+Boa Viagem,Terça,2,02:00,30
+Boa Viagem,Terça,3,03:00,53
+Boa Viagem,Quarta,18,18:00,16
+Boa Viagem,Quarta,19,19:00,32
+Boa Viagem,Quarta,20,20:00,26
+Boa Viagem,Quarta,21,21:00,28
+Boa Viagem,Quarta,22,22:00,52
+Boa Viagem,Quarta,23,23:00,59
+Boa Viagem,Quarta,0,00:00,59
+Boa Viagem,Quarta,1,01:00,68
+Boa Viagem,Quarta,2,02:00,38
+Boa Viagem,Quarta,3,03:00,65
+Boa Viagem,Quinta,18,18:00,46
+Boa Viagem,Quinta,19,19:00,57
+Boa Viagem,Quinta,20,20:00,74
+Boa Viagem,Quinta,21,21:00,63
+Boa Viagem,Quinta,22,22:00,89
+Boa Viagem,Quinta,23,23:00,73
+Boa Viagem,Quinta,0,00:00,81
+Boa Viagem,Quinta,1,01:00,91
+Boa Viagem,Quinta,2,02:00,85
+Boa Viagem,Quinta,3,03:00,100
+Boa Viagem,Sexta,18,18:00,57
+Boa Viagem,Sexta,19,19:00,36
+Boa Viagem,Sexta,20,20:00,94
+Boa Viagem,Sexta,21,21:00,100
+Boa Viagem,Sexta,22,22:00,100
+Boa Viagem,Sexta,23,23:00,100
+Boa Viagem,Sexta,0,00:00,100
+Boa Viagem,Sexta,1,01:00,100
+Boa Viagem,Sexta,2,02:00,100
+Boa Viagem,Sexta,3,03:00,100
+Boa Viagem,Sábado,18,18:00,27
+Boa Viagem,Sábado,19,19:00,31
+Boa Viagem,Sábado,20,20:00,100
+Boa Viagem,Sábado,21,21:00,100
+Boa Viagem,Sábado,22,22:00,100
+Boa Viagem,Sábado,23,23:00,100
+Boa Viagem,Sábado,0,00:00,100
+Boa Viagem,Sábado,1,01:00,100
+Boa Viagem,Sábado,2,02:00,100
+Boa Viagem,Sábado,3,03:00,100
+Boa Viagem,Domingo,18,18:00,18
+Boa Viagem,Domingo,19,19:00,49
+Boa Viagem,Domingo,20,20:00,61
+Boa Viagem,Domingo,21,21:00,76
+Boa Viagem,Domingo,22,22:00,81
+Boa Viagem,Domingo,23,23:00,92
+Boa Viagem,Domingo,0,00:00,70
+Boa Viagem,Domingo,1,01:00,92
+Boa Viagem,Domingo,2,02:00,72
+Boa Viagem,Domingo,3,03:00,100
+Recife Antigo,Segunda,18,18:00,9
+Recife Antigo,Segunda,19,19:00,5
+Recife Antigo,Segunda,20,20:00,25
+Recife Antigo,Segunda,21,21:00,24
+Recife Antigo,Segunda,22,22:00,51
+Recife Antigo,Segunda,23,23:00,37
+Recife Antigo,Segunda,0,00:00,33
+Recife Antigo,Segunda,1,01:00,47
+Recife Antigo,Segunda,2,02:00,37
+Recife Antigo,Segunda,3,03:00,38
+Recife Antigo,Terça,18,18:00,0
+Recife Antigo,Terça,19,19:00,9
+Recife Antigo,Terça,20,20:00,15
+Recife Antigo,Terça,21,21:00,44
+Recife Antigo,Terça,22,22:00,44
+Recife Antigo,Terça,23,23:00,54
+Recife Antigo,Terça,0,00:00,53
+Recife Antigo,Terça,1,01:00,45
+Recife Antigo,Terça,2,02:00,47
+Recife Antigo,Terça,3,03:00,53
+Recife Antigo,Quarta,18,18:00,21
+Recife Antigo,Quarta,19,19:00,10
+Recife Antigo,Quarta,20,20:00,31
+Recife Antigo,Quarta,21,21:00,40
+Recife Antigo,Quarta,22,22:00,62
+Recife Antigo,Quarta,23,23:00,61
+Recife Antigo,Quarta,0,00:00,65
+Recife Antigo,Quarta,1,01:00,74
+Recife Antigo,Quarta,2,02:00,74
+Recife Antigo,Quarta,3,03:00,48
+Recife Antigo,Quinta,18,18:00,51
+Recife Antigo,Quinta,19,19:00,46
+Recife Antigo,Quinta,20,20:00,50
+Recife Antigo,Quinta,21,21:00,57
+Recife Antigo,Quinta,22,22:00,85
+Recife Antigo,Quinta,23,23:00,100
+Recife Antigo,Quinta,0,00:00,78
+Recife Antigo,Quinta,1,01:00,100
+Recife Antigo,Quinta,2,02:00,71
+Recife Antigo,Quinta,3,03:00,100
+Recife Antigo,Sexta,18,18:00,56
+Recife Antigo,Sexta,19,19:00,41
+Recife Antigo,Sexta,20,20:00,100
+Recife Antigo,Sexta,21,21:00,100
+Recife Antigo,Sexta,22,22:00,100
+Recife Antigo,Sexta,23,23:00,100
+Recife Antigo,Sexta,0,00:00,100
+Recife Antigo,Sexta,1,01:00,100
+Recife Antigo,Sexta,2,02:00,100
+Recife Antigo,Sexta,3,03:00,100
+Recife Antigo,Sábado,18,18:00,52
+Recife Antigo,Sábado,19,19:00,32
+Recife Antigo,Sábado,20,20:00,100
+Recife Antigo,Sábado,21,21:00,100
+Recife Antigo,Sábado,22,22:00,100
+Recife Antigo,Sábado,23,23:00,100
+Recife Antigo,Sábado,0,00:00,100
+Recife Antigo,Sábado,1,01:00,100
+Recife Antigo,Sábado,2,02:00,100
+Recife Antigo,Sábado,3,03:00,100
+Recife Antigo,Domingo,18,18:00,39
+Recife Antigo,Domingo,19,19:00,59
+Recife Antigo,Domingo,20,20:00,66
+Recife Antigo,Domingo,21,21:00,62
+Recife Antigo,Domingo,22,22:00,63
+Recife Antigo,Domingo,23,23:00,94
+Recife Antigo,Domingo,0,00:00,71
+Recife Antigo,Domingo,1,01:00,91
+Recife Antigo,Domingo,2,02:00,80
+Recife Antigo,Domingo,3,03:00,69
+Boa Vista,Segunda,18,18:00,26
+Boa Vista,Segunda,19,19:00,11
+Boa Vista,Segunda,20,20:00,22
+Boa Vista,Segunda,21,21:00,26
+Boa Vista,Segunda,22,22:00,26
+Boa Vista,Segunda,23,23:00,40
+Boa Vista,Segunda,0,00:00,37
+Boa Vista,Segunda,1,01:00,31
+Boa Vista,Segunda,2,02:00,29
+Boa Vista,Segunda,3,03:00,48
+Boa Vista,Terça,18,18:00,11
+Boa Vista,Terça,19,19:00,14
+Boa Vista,Terça,20,20:00,39
+Boa Vista,Terça,21,21:00,37
+Boa Vista,Terça,22,22:00,34
+Boa Vista,Terça,23,23:00,50
+Boa Vista,Terça,0,00:00,37
+Boa Vista,Terça,1,01:00,38
+Boa Vista,Terça,2,02:00,45
+Boa Vista,Terça,3,03:00,58
+Boa Vista,Quarta,18,18:00,21
+Boa Vista,Quarta,19,19:00,28
+Boa Vista,Quarta,20,20:00,40
+Boa Vista,Quarta,21,21:00,57
+Boa Vista,Quarta,22,22:00,64
+Boa Vista,Quarta,23,23:00,41
+Boa Vista,Quarta,0,00:00,74
+Boa Vista,Quarta,1,01:00,45
+Boa Vista,Quarta,2,02:00,62
+Boa Vista,Quarta,3,03:00,54
+Boa Vista,Quinta,18,18:00,58
+Boa Vista,Quinta,19,19:00,21
+Boa Vista,Quinta,20,20:00,86
+Boa Vista,Quinta,21,21:00,51
+Boa Vista,Quinta,22,22:00,95
+Boa Vista,Quinta,23,23:00,99
+Boa Vista,Quinta,0,00:00,100
+Boa Vista,Quinta,1,01:00,81
+Boa Vista,Quinta,2,02:00,71
+Boa Vista,Quinta,3,03:00,100
+Boa Vista,Sexta,18,18:00,83
+Boa Vista,Sexta,19,19:00,51
+Boa Vista,Sexta,20,20:00,89
+Boa Vista,Sexta,21,21:00,97
+Boa Vista,Sexta,22,22:00,100
+Boa Vista,Sexta,23,23:00,100
+Boa Vista,Sexta,0,00:00,100
+Boa Vista,Sexta,1,01:00,100
+Boa Vista,Sexta,2,02:00,100
+Boa Vista,Sexta,3,03:00,100
+Boa Vista,Sábado,18,18:00,46
+Boa Vista,Sábado,19,19:00,90
+Boa Vista,Sábado,20,20:00,100
+Boa Vista,Sábado,21,21:00,100
+Boa Vista,Sábado,22,22:00,100
+Boa Vista,Sábado,23,23:00,100
+Boa Vista,Sábado,0,00:00,100
+Boa Vista,Sábado,1,01:00,100
+Boa Vista,Sábado,2,02:00,100
+Boa Vista,Sábado,3,03:00,100
+Boa Vista,Domingo,18,18:00,33
+Boa Vista,Domingo,19,19:00,28
+Boa Vista,Domingo,20,20:00,57
+Boa Vista,Domingo,21,21:00,63
+Boa Vista,Domingo,22,22:00,86
+Boa Vista,Domingo,23,23:00,97
+Boa Vista,Domingo,0,00:00,69
+Boa Vista,Domingo,1,01:00,100
+Boa Vista,Domingo,2,02:00,100
+Boa Vista,Domingo,3,03:00,69
+Casa Forte,Segunda,18,18:00,20
+Casa Forte,Segunda,19,19:00,1
+Casa Forte,Segunda,20,20:00,28
+Casa Forte,Segunda,21,21:00,36
+Casa Forte,Segunda,22,22:00,42
+Casa Forte,Segunda,23,23:00,29
+Casa Forte,Segunda,0,00:00,29
+Casa Forte,Segunda,1,01:00,32
+Casa Forte,Segunda,2,02:00,47
+Casa Forte,Segunda,3,03:00,45
+Casa Forte,Terça,18,18:00,6
+Casa Forte,Terça,19,19:00,10
+Casa Forte,Terça,20,20:00,33
+Casa Forte,Terça,21,21:00,15
+Casa Forte,Terça,22,22:00,33
+Casa Forte,Terça,23,23:00,34
+Casa Forte,Terça,0,00:00,53
+Casa Forte,Terça,1,01:00,52
+Casa Forte,Terça,2,02:00,64
+Casa Forte,Terça,3,03:00,45
+Casa Forte,Quarta,18,18:00,24
+Casa Forte,Quarta,19,19:00,27
+Casa Forte,Quarta,20,20:00,24
+Casa Forte,Quarta,21,21:00,46
+Casa Forte,Quarta,22,22:00,53
+Casa Forte,Quarta,23,23:00,49
+Casa Forte,Quarta,0,00:00,41
+Casa Forte,Quarta,1,01:00,76
+Casa Forte,Quarta,2,02:00,43
+Casa Forte,Quarta,3,03:00,79
+Casa Forte,Quinta,18,18:00,38
+Casa Forte,Quinta,19,19:00,29
+Casa Forte,Quinta,20,20:00,70
+Casa Forte,Quinta,21,21:00,59
+Casa Forte,Quinta,22,22:00,80
+Casa Forte,Quinta,23,23:00,86
+Casa Forte,Quinta,0,00:00,90
+Casa Forte,Quinta,1,01:00,88
+Casa Forte,Quinta,2,02:00,100
+Casa Forte,Quinta,3,03:00,97
+Casa Forte,Sexta,18,18:00,48
+Casa Forte,Sexta,19,19:00,57
+Casa Forte,Sexta,20,20:00,90
+Casa Forte,Sexta,21,21:00,73
+Casa Forte,Sexta,22,22:00,100
+Casa Forte,Sexta,23,23:00,100
+Casa Forte,Sexta,0,00:00,100
+Casa Forte,Sexta,1,01:00,100
+Casa Forte,Sexta,2,02:00,100
+Casa Forte,Sexta,3,03:00,100
+Casa Forte,Sábado,18,18:00,55
+Casa Forte,Sábado,19,19:00,67
+Casa Forte,Sábado,20,20:00,100
+Casa Forte,Sábado,21,21:00,100
+Casa Forte,Sábado,22,22:00,100
+Casa Forte,Sábado,23,23:00,100
+Casa Forte,Sábado,0,00:00,100
+Casa Forte,Sábado,1,01:00,100
+Casa Forte,Sábado,2,02:00,100
+Casa Forte,Sábado,3,03:00,100
+Casa Forte,Domingo,18,18:00,24
+Casa Forte,Domingo,19,19:00,38
+Casa Forte,Domingo,20,20:00,84
+Casa Forte,Domingo,21,21:00,51
+Casa Forte,Domingo,22,22:00,72
+Casa Forte,Domingo,23,23:00,94
+Casa Forte,Domingo,0,00:00,88
+Casa Forte,Domingo,1,01:00,94
+Casa Forte,Domingo,2,02:00,97
+Casa Forte,Domingo,3,03:00,95
+Aflitos,Segunda,18,18:00,8
+Aflitos,Segunda,19,19:00,7
+Aflitos,Segunda,20,20:00,29
+Aflitos,Segunda,21,21:00,33
+Aflitos,Segunda,22,22:00,52
+Aflitos,Segunda,23,23:00,31
+Aflitos,Segunda,0,00:00,53
+Aflitos,Segunda,1,01:00,33
+Aflitos,Segunda,2,02:00,35
+Aflitos,Segunda,3,03:00,48
+Aflitos,Terça,18,18:00,18
+Aflitos,Terça,19,19:00,17
+Aflitos,Terça,20,20:00,16
+Aflitos,Terça,21,21:00,21
+Aflitos,Terça,22,22:00,44
+Aflitos,Terça,23,23:00,42
+Aflitos,Terça,0,00:00,35
+Aflitos,Terça,1,01:00,51
+Aflitos,Terça,2,02:00,33
+Aflitos,Terça,3,03:00,37
+Aflitos,Quarta,18,18:00,35
+Aflitos,Quarta,19,19:00,2
+Aflitos,Quarta,20,20:00,43
+Aflitos,Quarta,21,21:00,43
+Aflitos,Quarta,22,22:00,60
+Aflitos,Quarta,23,23:00,75
+Aflitos,Quarta,0,00:00,70
+Aflitos,Quarta,1,01:00,64
+Aflitos,Quarta,2,02:00,58
+Aflitos,Quarta,3,03:00,55
+Aflitos,Quinta,18,18:00,31
+Aflitos,Quinta,19,19:00,26
+Aflitos,Quinta,20,20:00,61
+Aflitos,Quinta,21,21:00,94
+Aflitos,Quinta,22,22:00,100
+Aflitos,Quinta,23,23:00,100
+Aflitos,Quinta,0,00:00,91
+Aflitos,Quinta,1,01:00,100
+Aflitos,Quinta,2,02:00,100
+Aflitos,Quinta,3,03:00,95
+Aflitos,Sexta,18,18:00,68
+Aflitos,Sexta,19,19:00,47
+Aflitos,Sexta,20,20:00,100
+Aflitos,Sexta,21,21:00,74
+Aflitos,Sexta,22,22:00,100
+Aflitos,Sexta,23,23:00,100
+Aflitos,Sexta,0,00:00,100
+Aflitos,Sexta,1,01:00,100
+Aflitos,Sexta,2,02:00,100
+Aflitos,Sexta,3,03:00,100
+Aflitos,Sábado,18,18:00,54
+Aflitos,Sábado,19,19:00,59
+Aflitos,Sábado,20,20:00,100
+Aflitos,Sábado,21,21:00,88
+Aflitos,Sábado,22,22:00,100
+Aflitos,Sábado,23,23:00,100
+Aflitos,Sábado,0,00:00,100
+Aflitos,Sábado,1,01:00,100
+Aflitos,Sábado,2,02:00,100
+Aflitos,Sábado,3,03:00,100
+Aflitos,Domingo,18,18:00,24
+Aflitos,Domingo,19,19:00,23
+Aflitos,Domingo,20,20:00,48
+Aflitos,Domingo,21,21:00,59
+Aflitos,Domingo,22,22:00,95
+Aflitos,Domingo,23,23:00,89
+Aflitos,Domingo,0,00:00,75
+Aflitos,Domingo,1,01:00,91
+Aflitos,Domingo,2,02:00,81
+Aflitos,Domingo,3,03:00,92
+Espinheiro,Segunda,18,18:00,20
+Espinheiro,Segunda,19,19:00,6
+Espinheiro,Segunda,20,20:00,38
+Espinheiro,Segunda,21,21:00,40
+Espinheiro,Segunda,22,22:00,37
+Espinheiro,Segunda,23,23:00,36
+Espinheiro,Segunda,0,00:00,22
+Espinheiro,Segunda,1,01:00,24
+Espinheiro,Segunda,2,02:00,33
+Espinheiro,Segunda,3,03:00,38
+Espinheiro,Terça,18,18:00,10
+Espinheiro,Terça,19,19:00,14
+Espinheiro,Terça,20,20:00,19
+Espinheiro,Terça,21,21:00,26
+Espinheiro,Terça,22,22:00,51
+Espinheiro,Terça,23,23:00,52
+Espinheiro,Terça,0,00:00,39
+Espinheiro,Terça,1,01:00,53
+Espinheiro,Terça,2,02:00,48
+Espinheiro,Terça,3,03:00,55
+Espinheiro,Quarta,18,18:00,7
+Espinheiro,Quarta,19,19:00,14
+Espinheiro,Quarta,20,20:00,32
+Espinheiro,Quarta,21,21:00,49
+Espinheiro,Quarta,22,22:00,73
+Espinheiro,Quarta,23,23:00,53
+Espinheiro,Quarta,0,00:00,52
+Espinheiro,Quarta,1,01:00,41
+Espinheiro,Quarta,2,02:00,65
+Espinheiro,Quarta,3,03:00,66
+Espinheiro,Quinta,18,18:00,15
+Espinheiro,Quinta,19,19:00,23
+Espinheiro,Quinta,20,20:00,60
+Espinheiro,Quinta,21,21:00,73
+Espinheiro,Quinta,22,22:00,100
+Espinheiro,Quinta,23,23:00,78
+Espinheiro,Quinta,0,00:00,74
+Espinheiro,Quinta,1,01:00,94
+Espinheiro,Quinta,2,02:00,81
+Espinheiro,Quinta,3,03:00,90
+Espinheiro,Sexta,18,18:00,45
+Espinheiro,Sexta,19,19:00,59
+Espinheiro,Sexta,20,20:00,100
+Espinheiro,Sexta,21,21:00,85
+Espinheiro,Sexta,22,22:00,100
+Espinheiro,Sexta,23,23:00,100
+Espinheiro,Sexta,0,00:00,100
+Espinheiro,Sexta,1,01:00,100
+Espinheiro,Sexta,2,02:00,100
+Espinheiro,Sexta,3,03:00,100
+Espinheiro,Sábado,18,18:00,56
+Espinheiro,Sábado,19,19:00,42
+Espinheiro,Sábado,20,20:00,100
+Espinheiro,Sábado,21,21:00,81
+Espinheiro,Sábado,22,22:00,100
+Espinheiro,Sábado,23,23:00,100
+Espinheiro,Sábado,0,00:00,100
+Espinheiro,Sábado,1,01:00,100
+Espinheiro,Sábado,2,02:00,100
+Espinheiro,Sábado,3,03:00,100
+Espinheiro,Domingo,18,18:00,40
+Espinheiro,Domingo,19,19:00,48
+Espinheiro,Domingo,20,20:00,66
+Espinheiro,Domingo,21,21:00,65
+Espinheiro,Domingo,22,22:00,76
+Espinheiro,Domingo,23,23:00,96
+Espinheiro,Domingo,0,00:00,99
+Espinheiro,Domingo,1,01:00,100
+Espinheiro,Domingo,2,02:00,100
+Espinheiro,Domingo,3,03:00,100
+Graças,Segunda,18,18:00,2
+Graças,Segunda,19,19:00,26
+Graças,Segunda,20,20:00,17
+Graças,Segunda,21,21:00,19
+Graças,Segunda,22,22:00,23
+Graças,Segunda,23,23:00,28
+Graças,Segunda,0,00:00,43
+Graças,Segunda,1,01:00,43
+Graças,Segunda,2,02:00,41
+Graças,Segunda,3,03:00,34
+Graças,Terça,18,18:00,18
+Graças,Terça,19,19:00,12
+Graças,Terça,20,20:00,36
+Graças,Terça,21,21:00,34
+Graças,Terça,22,22:00,50
+Graças,Terça,23,23:00,49
+Graças,Terça,0,00:00,43
+Graças,Terça,1,01:00,60
+Graças,Terça,2,02:00,52
+Graças,Terça,3,03:00,54
+Graças,Quarta,18,18:00,17
+Graças,Quarta,19,19:00,9
+Graças,Quarta,20,20:00,54
+Graças,Quarta,21,21:00,39
+Graças,Quarta,22,22:00,64
+Graças,Quarta,23,23:00,55
+Graças,Quarta,0,00:00,67
+Graças,Quarta,1,01:00,76
+Graças,Quarta,2,02:00,71
+Graças,Quarta,3,03:00,73
+Graças,Quinta,18,18:00,31
+Graças,Quinta,19,19:00,50
+Graças,Quinta,20,20:00,84
+Graças,Quinta,21,21:00,62
+Graças,Quinta,22,22:00,82
+Graças,Quinta,23,23:00,87
+Graças,Quinta,0,00:00,100
+Graças,Quinta,1,01:00,100
+Graças,Quinta,2,02:00,81
+Graças,Quinta,3,03:00,100
+Graças,Sexta,18,18:00,63
+Graças,Sexta,19,19:00,33
+Graças,Sexta,20,20:00,100
+Graças,Sexta,21,21:00,100
+Graças,Sexta,22,22:00,100
+Graças,Sexta,23,23:00,100
+Graças,Sexta,0,00:00,100
+Graças,Sexta,1,01:00,100
+Graças,Sexta,2,02:00,100
+Graças,Sexta,3,03:00,100
+Graças,Sábado,18,18:00,37
+Graças,Sábado,19,19:00,80
+Graças,Sábado,20,20:00,100
+Graças,Sábado,21,21:00,99
+Graças,Sábado,22,22:00,100
+Graças,Sábado,23,23:00,100
+Graças,Sábado,0,00:00,100
+Graças,Sábado,1,01:00,100
+Graças,Sábado,2,02:00,100
+Graças,Sábado,3,03:00,100
+Graças,Domingo,18,18:00,51
+Graças,Domingo,19,19:00,40
+Graças,Domingo,20,20:00,62
+Graças,Domingo,21,21:00,49
+Graças,Domingo,22,22:00,100
+Graças,Domingo,23,23:00,80
+Graças,Domingo,0,00:00,100
+Graças,Domingo,1,01:00,100
+Graças,Domingo,2,02:00,67
+Graças,Domingo,3,03:00,75
+Pina,Segunda,18,18:00,11
+Pina,Segunda,19,19:00,2
+Pina,Segunda,20,20:00,18
+Pina,Segunda,21,21:00,35
+Pina,Segunda,22,22:00,37
+Pina,Segunda,23,23:00,35
+Pina,Segunda,0,00:00,47
+Pina,Segunda,1,01:00,40
+Pina,Segunda,2,02:00,33
+Pina,Segunda,3,03:00,30
+Pina,Terça,18,18:00,14
+Pina,Terça,19,19:00,27
+Pina,Terça,20,20:00,27
+Pina,Terça,21,21:00,47
+Pina,Terça,22,22:00,53
+Pina,Terça,23,23:00,43
+Pina,Terça,0,00:00,37
+Pina,Terça,1,01:00,41
+Pina,Terça,2,02:00,31
+Pina,Terça,3,03:00,34
+Pina,Quarta,18,18:00,24
+Pina,Quarta,19,19:00,27
+Pina,Quarta,20,20:00,50
+Pina,Quarta,21,21:00,45
+Pina,Quarta,22,22:00,60
+Pina,Quarta,23,23:00,64
+Pina,Quarta,0,00:00,64
+Pina,Quarta,1,01:00,38
+Pina,Quarta,2,02:00,54
+Pina,Quarta,3,03:00,59
+Pina,Quinta,18,18:00,34
+Pina,Quinta,19,19:00,26
+Pina,Quinta,20,20:00,75
+Pina,Quinta,21,21:00,90
+Pina,Quinta,22,22:00,91
+Pina,Quinta,23,23:00,100
+Pina,Quinta,0,00:00,100
+Pina,Quinta,1,01:00,94
+Pina,Quinta,2,02:00,89
+Pina,Quinta,3,03:00,95
+Pina,Sexta,18,18:00,82
+Pina,Sexta,19,19:00,56
+Pina,Sexta,20,20:00,67
+Pina,Sexta,21,21:00,100
+Pina,Sexta,22,22:00,100
+Pina,Sexta,23,23:00,100
+Pina,Sexta,0,00:00,100
+Pina,Sexta,1,01:00,100
+Pina,Sexta,2,02:00,100
+Pina,Sexta,3,03:00,100
+Pina,Sábado,18,18:00,70
+Pina,Sábado,19,19:00,82
+Pina,Sábado,20,20:00,100
+Pina,Sábado,21,21:00,100
+Pina,Sábado,22,22:00,100
+Pina,Sábado,23,23:00,100
+Pina,Sábado,0,00:00,100
+Pina,Sábado,1,01:00,100
+Pina,Sábado,2,02:00,100
+Pina,Sábado,3,03:00,100
+Pina,Domingo,18,18:00,37
+Pina,Domingo,19,19:00,35
+Pina,Domingo,20,20:00,77
+Pina,Domingo,21,21:00,56
+Pina,Domingo,22,22:00,100
+Pina,Domingo,23,23:00,88
+Pina,Domingo,0,00:00,90
+Pina,Domingo,1,01:00,100
+Pina,Domingo,2,02:00,99
+Pina,Domingo,3,03:00,81
+Ilha do Leite,Segunda,18,18:00,25
+Ilha do Leite,Segunda,19,19:00,22
+Ilha do Leite,Segunda,20,20:00,35
+Ilha do Leite,Segunda,21,21:00,27
+Ilha do Leite,Segunda,22,22:00,38
+Ilha do Leite,Segunda,23,23:00,50
+Ilha do Leite,Segunda,0,00:00,31
+Ilha do Leite,Segunda,1,01:00,36
+Ilha do Leite,Segunda,2,02:00,30
+Ilha do Leite,Segunda,3,03:00,48
+Ilha do Leite,Terça,18,18:00,18
+Ilha do Leite,Terça,19,19:00,27
+Ilha do Leite,Terça,20,20:00,28
+Ilha do Leite,Terça,21,21:00,29
+Ilha do Leite,Terça,22,22:00,39
+Ilha do Leite,Terça,23,23:00,43
+Ilha do Leite,Terça,0,00:00,40
+Ilha do Leite,Terça,1,01:00,45
+Ilha do Leite,Terça,2,02:00,37
+Ilha do Leite,Terça,3,03:00,36
+Ilha do Leite,Quarta,18,18:00,43
+Ilha do Leite,Quarta,19,19:00,34
+Ilha do Leite,Quarta,20,20:00,65
+Ilha do Leite,Quarta,21,21:00,38
+Ilha do Leite,Quarta,22,22:00,66
+Ilha do Leite,Quarta,23,23:00,53
+Ilha do Leite,Quarta,0,00:00,71
+Ilha do Leite,Quarta,1,01:00,59
+Ilha do Leite,Quarta,2,02:00,49
+Ilha do Leite,Quarta,3,03:00,63
+Ilha do Leite,Quinta,18,18:00,20
+Ilha do Leite,Quinta,19,19:00,35
+Ilha do Leite,Quinta,20,20:00,79
+Ilha do Leite,Quinta,21,21:00,57
+Ilha do Leite,Quinta,22,22:00,100
+Ilha do Leite,Quinta,23,23:00,100
+Ilha do Leite,Quinta,0,00:00,97
+Ilha do Leite,Quinta,1,01:00,99
+Ilha do Leite,Quinta,2,02:00,100
+Ilha do Leite,Quinta,3,03:00,69
+Ilha do Leite,Sexta,18,18:00,50
+Ilha do Leite,Sexta,19,19:00,32
+Ilha do Leite,Sexta,20,20:00,99
+Ilha do Leite,Sexta,21,21:00,91
+Ilha do Leite,Sexta,22,22:00,100
+Ilha do Leite,Sexta,23,23:00,100
+Ilha do Leite,Sexta,0,00:00,100
+Ilha do Leite,Sexta,1,01:00,100
+Ilha do Leite,Sexta,2,02:00,100
+Ilha do Leite,Sexta,3,03:00,100
+Ilha do Leite,Sábado,18,18:00,43
+Ilha do Leite,Sábado,19,19:00,80
+Ilha do Leite,Sábado,20,20:00,100
+Ilha do Leite,Sábado,21,21:00,100
+Ilha do Leite,Sábado,22,22:00,100
+Ilha do Leite,Sábado,23,23:00,100
+Ilha do Leite,Sábado,0,00:00,100
+Ilha do Leite,Sábado,1,01:00,100
+Ilha do Leite,Sábado,2,02:00,100
+Ilha do Leite,Sábado,3,03:00,100
+Ilha do Leite,Domingo,18,18:00,45
+Ilha do Leite,Domingo,19,19:00,23
+Ilha do Leite,Domingo,20,20:00,41
+Ilha do Leite,Domingo,21,21:00,57
+Ilha do Leite,Domingo,22,22:00,94
+Ilha do Leite,Domingo,23,23:00,100
+Ilha do Leite,Domingo,0,00:00,87
+Ilha do Leite,Domingo,1,01:00,99
+Ilha do Leite,Domingo,2,02:00,89
+Ilha do Leite,Domingo,3,03:00,81
+Santo Amaro,Segunda,18,18:00,12
+Santo Amaro,Segunda,19,19:00,4
+Santo Amaro,Segunda,20,20:00,17
+Santo Amaro,Segunda,21,21:00,13
+Santo Amaro,Segunda,22,22:00,45
+Santo Amaro,Segunda,23,23:00,25
+Santo Amaro,Segunda,0,00:00,45
+Santo Amaro,Segunda,1,01:00,33
+Santo Amaro,Segunda,2,02:00,46
+Santo Amaro,Segunda,3,03:00,41
+Santo Amaro,Terça,18,18:00,11
+Santo Amaro,Terça,19,19:00,11
+Santo Amaro,Terça,20,20:00,29
+Santo Amaro,Terça,21,21:00,26
+Santo Amaro,Terça,22,22:00,29
+Santo Amaro,Terça,23,23:00,47
+Santo Amaro,Terça,0,00:00,36
+Santo Amaro,Terça,1,01:00,44
+Santo Amaro,Terça,2,02:00,39
+Santo Amaro,Terça,3,03:00,49
+Santo Amaro,Quarta,18,18:00,11
+Santo Amaro,Quarta,19,19:00,15
+Santo Amaro,Quarta,20,20:00,54
+Santo Amaro,Quarta,21,21:00,47
+Santo Amaro,Quarta,22,22:00,57
+Santo Amaro,Quarta,23,23:00,51
+Santo Amaro,Quarta,0,00:00,69
+Santo Amaro,Quarta,1,01:00,49
+Santo Amaro,Quarta,2,02:00,43
+Santo Amaro,Quarta,3,03:00,56
+Santo Amaro,Quinta,18,18:00,40
+Santo Amaro,Quinta,19,19:00,48
+Santo Amaro,Quinta,20,20:00,91
+Santo Amaro,Quinta,21,21:00,60
+Santo Amaro,Quinta,22,22:00,100
+Santo Amaro,Quinta,23,23:00,84
+Santo Amaro,Quinta,0,00:00,86
+Santo Amaro,Quinta,1,01:00,93
+Santo Amaro,Quinta,2,02:00,100
+Santo Amaro,Quinta,3,03:00,88
+Santo Amaro,Sexta,18,18:00,17
+Santo Amaro,Sexta,19,19:00,56
+Santo Amaro,Sexta,20,20:00,100
+Santo Amaro,Sexta,21,21:00,100
+Santo Amaro,Sexta,22,22:00,100
+Santo Amaro,Sexta,23,23:00,100
+Santo Amaro,Sexta,0,00:00,100
+Santo Amaro,Sexta,1,01:00,100
+Santo Amaro,Sexta,2,02:00,100
+Santo Amaro,Sexta,3,03:00,100
+Santo Amaro,Sábado,18,18:00,57
+Santo Amaro,Sábado,19,19:00,50
+Santo Amaro,Sábado,20,20:00,75
+Santo Amaro,Sábado,21,21:00,100
+Santo Amaro,Sábado,22,22:00,100
+Santo Amaro,Sábado,23,23:00,100
+Santo Amaro,Sábado,0,00:00,100
+Santo Amaro,Sábado,1,01:00,100
+Santo Amaro,Sábado,2,02:00,100
+Santo Amaro,Sábado,3,03:00,100
+Santo Amaro,Domingo,18,18:00,53
+Santo Amaro,Domingo,19,19:00,24
+Santo Amaro,Domingo,20,20:00,65
+Santo Amaro,Domingo,21,21:00,93
+Santo Amaro,Domingo,22,22:00,73
+Santo Amaro,Domingo,23,23:00,85
+Santo Amaro,Domingo,0,00:00,71
+Santo Amaro,Domingo,1,01:00,88
+Santo Amaro,Domingo,2,02:00,100
+Santo Amaro,Domingo,3,03:00,83
+Madalena,Segunda,18,18:00,23
+Madalena,Segunda,19,19:00,23
+Madalena,Segunda,20,20:00,25
+Madalena,Segunda,21,21:00,15
+Madalena,Segunda,22,22:00,32
+Madalena,Segunda,23,23:00,40
+Madalena,Segunda,0,00:00,34
+Madalena,Segunda,1,01:00,52
+Madalena,Segunda,2,02:00,45
+Madalena,Segunda,3,03:00,44
+Madalena,Terça,18,18:00,21
+Madalena,Terça,19,19:00,17
+Madalena,Terça,20,20:00,25
+Madalena,Terça,21,21:00,34
+Madalena,Terça,22,22:00,50
+Madalena,Terça,23,23:00,40
+Madalena,Terça,0,00:00,35
+Madalena,Terça,1,01:00,35
+Madalena,Terça,2,02:00,48
+Madalena,Terça,3,03:00,42
+Madalena,Quarta,18,18:00,39
+Madalena,Quarta,19,19:00,38
+Madalena,Quarta,20,20:00,37
+Madalena,Quarta,21,21:00,50
+Madalena,Quarta,22,22:00,74
+Madalena,Quarta,23,23:00,53
+Madalena,Quarta,0,00:00,61
+Madalena,Quarta,1,01:00,61
+Madalena,Quarta,2,02:00,74
+Madalena,Quarta,3,03:00,51
+Madalena,Quinta,18,18:00,60
+Madalena,Quinta,19,19:00,64
+Madalena,Quinta,20,20:00,43
+Madalena,Quinta,21,21:00,73
+Madalena,Quinta,22,22:00,100
+Madalena,Quinta,23,23:00,100
+Madalena,Quinta,0,00:00,100
+Madalena,Quinta,1,01:00,85
+Madalena,Quinta,2,02:00,88
+Madalena,Quinta,3,03:00,89
+Madalena,Sexta,18,18:00,34
+Madalena,Sexta,19,19:00,46
+Madalena,Sexta,20,20:00,100
+Madalena,Sexta,21,21:00,90
+Madalena,Sexta,22,22:00,100
+Madalena,Sexta,23,23:00,100
+Madalena,Sexta,0,00:00,100
+Madalena,Sexta,1,01:00,100
+Madalena,Sexta,2,02:00,100
+Madalena,Sexta,3,03:00,100
+Madalena,Sábado,18,18:00,86
+Madalena,Sábado,19,19:00,23
+Madalena,Sábado,20,20:00,100
+Madalena,Sábado,21,21:00,89
+Madalena,Sábado,22,22:00,100
+Madalena,Sábado,23,23:00,100
+Madalena,Sábado,0,00:00,100
+Madalena,Sábado,1,01:00,100
+Madalena,Sábado,2,02:00,100
+Madalena,Sábado,3,03:00,100
+Madalena,Domingo,18,18:00,34
+Madalena,Domingo,19,19:00,46
+Madalena,Domingo,20,20:00,84
+Madalena,Domingo,21,21:00,52
+Madalena,Domingo,22,22:00,100
+Madalena,Domingo,23,23:00,100
+Madalena,Domingo,0,00:00,91
+Madalena,Domingo,1,01:00,100
+Madalena,Domingo,2,02:00,99
+Madalena,Domingo,3,03:00,99
+Torre,Segunda,18,18:00,22
+Torre,Segunda,19,19:00,2
+Torre,Segunda,20,20:00,29
+Torre,Segunda,21,21:00,20
+Torre,Segunda,22,22:00,45
+Torre,Segunda,23,23:00,44
+Torre,Segunda,0,00:00,44
+Torre,Segunda,1,01:00,28
+Torre,Segunda,2,02:00,25
+Torre,Segunda,3,03:00,31
+Torre,Terça,18,18:00,27
+Torre,Terça,19,19:00,8
+Torre,Terça,20,20:00,31
+Torre,Terça,21,21:00,20
+Torre,Terça,22,22:00,55
+Torre,Terça,23,23:00,43
+Torre,Terça,0,00:00,47
+Torre,Terça,1,01:00,49
+Torre,Terça,2,02:00,40
+Torre,Terça,3,03:00,46
+Torre,Quarta,18,18:00,40
+Torre,Quarta,19,19:00,18
+Torre,Quarta,20,20:00,51
+Torre,Quarta,21,21:00,62
+Torre,Quarta,22,22:00,56
+Torre,Quarta,23,23:00,54
+Torre,Quarta,0,00:00,57
+Torre,Quarta,1,01:00,64
+Torre,Quarta,2,02:00,76
+Torre,Quarta,3,03:00,66
+Torre,Quinta,18,18:00,45
+Torre,Quinta,19,19:00,56
+Torre,Quinta,20,20:00,52
+Torre,Quinta,21,21:00,57
+Torre,Quinta,22,22:00,100
+Torre,Quinta,23,23:00,100
+Torre,Quinta,0,00:00,100
+Torre,Quinta,1,01:00,100
+Torre,Quinta,2,02:00,100
+Torre,Quinta,3,03:00,90
+Torre,Sexta,18,18:00,81
+Torre,Sexta,19,19:00,47
+Torre,Sexta,20,20:00,100
+Torre,Sexta,21,21:00,82
+Torre,Sexta,22,22:00,100
+Torre,Sexta,23,23:00,100
+Torre,Sexta,0,00:00,100
+Torre,Sexta,1,01:00,100
+Torre,Sexta,2,02:00,100
+Torre,Sexta,3,03:00,100
+Torre,Sábado,18,18:00,67
+Torre,Sábado,19,19:00,73
+Torre,Sábado,20,20:00,100
+Torre,Sábado,21,21:00,100
+Torre,Sábado,22,22:00,100
+Torre,Sábado,23,23:00,100
+Torre,Sábado,0,00:00,100
+Torre,Sábado,1,01:00,100
+Torre,Sábado,2,02:00,100
+Torre,Sábado,3,03:00,100
+Torre,Domingo,18,18:00,47
+Torre,Domingo,19,19:00,57
+Torre,Domingo,20,20:00,80
+Torre,Domingo,21,21:00,61
+Torre,Domingo,22,22:00,92
+Torre,Domingo,23,23:00,84
+Torre,Domingo,0,00:00,74
+Torre,Domingo,1,01:00,67
+Torre,Domingo,2,02:00,88
+Torre,Domingo,3,03:00,77
+Várzea,Segunda,18,18:00,14
+Várzea,Segunda,19,19:00,10
+Várzea,Segunda,20,20:00,13
+Várzea,Segunda,21,21:00,30
+Várzea,Segunda,22,22:00,40
+Várzea,Segunda,23,23:00,31
+Várzea,Segunda,0,00:00,47
+Várzea,Segunda,1,01:00,40
+Várzea,Segunda,2,02:00,50
+Várzea,Segunda,3,03:00,40
+Várzea,Terça,18,18:00,32
+Várzea,Terça,19,19:00,21
+Várzea,Terça,20,20:00,34
+Várzea,Terça,21,21:00,38
+Várzea,Terça,22,22:00,40
+Várzea,Terça,23,23:00,55
+Várzea,Terça,0,00:00,46
+Várzea,Terça,1,01:00,54
+Várzea,Terça,2,02:00,61
+Várzea,Terça,3,03:00,26
+Várzea,Quarta,18,18:00,28
+Várzea,Quarta,19,19:00,25
+Várzea,Quarta,20,20:00,57
+Várzea,Quarta,21,21:00,49
+Várzea,Quarta,22,22:00,81
+Várzea,Quarta,23,23:00,75
+Várzea,Quarta,0,00:00,64
+Várzea,Quarta,1,01:00,70
+Várzea,Quarta,2,02:00,48
+Várzea,Quarta,3,03:00,59
+Várzea,Quinta,18,18:00,18
+Várzea,Quinta,19,19:00,21
+Várzea,Quinta,20,20:00,87
+Várzea,Quinta,21,21:00,57
+Várzea,Quinta,22,22:00,82
+Várzea,Quinta,23,23:00,95
+Várzea,Quinta,0,00:00,82
+Várzea,Quinta,1,01:00,92
+Várzea,Quinta,2,02:00,100
+Várzea,Quinta,3,03:00,78
+Várzea,Sexta,18,18:00,46
+Várzea,Sexta,19,19:00,22
+Várzea,Sexta,20,20:00,100
+Várzea,Sexta,21,21:00,97
+Várzea,Sexta,22,22:00,100
+Várzea,Sexta,23,23:00,100
+Várzea,Sexta,0,00:00,100
+Várzea,Sexta,1,01:00,100
+Várzea,Sexta,2,02:00,100
+Várzea,Sexta,3,03:00,100
+Várzea,Sábado,18,18:00,85
+Várzea,Sábado,19,19:00,54
+Várzea,Sábado,20,20:00,100
+Várzea,Sábado,21,21:00,93
+Várzea,Sábado,22,22:00,100
+Várzea,Sábado,23,23:00,100
+Várzea,Sábado,0,00:00,100
+Várzea,Sábado,1,01:00,100
+Várzea,Sábado,2,02:00,100
+Várzea,Sábado,3,03:00,100
+Várzea,Domingo,18,18:00,24
+Várzea,Domingo,19,19:00,63
+Várzea,Domingo,20,20:00,72
+Várzea,Domingo,21,21:00,78
+Várzea,Domingo,22,22:00,65
+Várzea,Domingo,23,23:00,98
+Várzea,Domingo,0,00:00,85
+Várzea,Domingo,1,01:00,100
+Várzea,Domingo,2,02:00,100
+Várzea,Domingo,3,03:00,71
+Encruzilhada,Segunda,18,18:00,18
+Encruzilhada,Segunda,19,19:00,6
+Encruzilhada,Segunda,20,20:00,24
+Encruzilhada,Segunda,21,21:00,27
+Encruzilhada,Segunda,22,22:00,36
+Encruzilhada,Segunda,23,23:00,44
+Encruzilhada,Segunda,0,00:00,44
+Encruzilhada,Segunda,1,01:00,42
+Encruzilhada,Segunda,2,02:00,29
+Encruzilhada,Segunda,3,03:00,54
+Encruzilhada,Terça,18,18:00,12
+Encruzilhada,Terça,19,19:00,10
+Encruzilhada,Terça,20,20:00,35
+Encruzilhada,Terça,21,21:00,34
+Encruzilhada,Terça,22,22:00,36
+Encruzilhada,Terça,23,23:00,40
+Encruzilhada,Terça,0,00:00,49
+Encruzilhada,Terça,1,01:00,46
+Encruzilhada,Terça,2,02:00,55
+Encruzilhada,Terça,3,03:00,44
+Encruzilhada,Quarta,18,18:00,23
+Encruzilhada,Quarta,19,19:00,35
+Encruzilhada,Quarta,20,20:00,40
+Encruzilhada,Quarta,21,21:00,44
+Encruzilhada,Quarta,22,22:00,52
+Encruzilhada,Quarta,23,23:00,65
+Encruzilhada,Quarta,0,00:00,40
+Encruzilhada,Quarta,1,01:00,40
+Encruzilhada,Quarta,2,02:00,50
+Encruzilhada,Quarta,3,03:00,53
+Encruzilhada,Quinta,18,18:00,39
+Encruzilhada,Quinta,19,19:00,55
+Encruzilhada,Quinta,20,20:00,70
+Encruzilhada,Quinta,21,21:00,80
+Encruzilhada,Quinta,22,22:00,96
+Encruzilhada,Quinta,23,23:00,81
+Encruzilhada,Quinta,0,00:00,86
+Encruzilhada,Quinta,1,01:00,90
+Encruzilhada,Quinta,2,02:00,100
+Encruzilhada,Quinta,3,03:00,88
+Encruzilhada,Sexta,18,18:00,20
+Encruzilhada,Sexta,19,19:00,52
+Encruzilhada,Sexta,20,20:00,76
+Encruzilhada,Sexta,21,21:00,100
+Encruzilhada,Sexta,22,22:00,100
+Encruzilhada,Sexta,23,23:00,100
+Encruzilhada,Sexta,0,00:00,100
+Encruzilhada,Sexta,1,01:00,100
+Encruzilhada,Sexta,2,02:00,100
+Encruzilhada,Sexta,3,03:00,100
+Encruzilhada,Sábado,18,18:00,40
+Encruzilhada,Sábado,19,19:00,87
+Encruzilhada,Sábado,20,20:00,100
+Encruzilhada,Sábado,21,21:00,87
+Encruzilhada,Sábado,22,22:00,100
+Encruzilhada,Sábado,23,23:00,100
+Encruzilhada,Sábado,0,00:00,100
+Encruzilhada,Sábado,1,01:00,100
+Encruzilhada,Sábado,2,02:00,100
+Encruzilhada,Sábado,3,03:00,100
+Encruzilhada,Domingo,18,18:00,39
+Encruzilhada,Domingo,19,19:00,30
+Encruzilhada,Domingo,20,20:00,54
+Encruzilhada,Domingo,21,21:00,76
+Encruzilhada,Domingo,22,22:00,82
+Encruzilhada,Domingo,23,23:00,100
+Encruzilhada,Domingo,0,00:00,100
+Encruzilhada,Domingo,1,01:00,71
+Encruzilhada,Domingo,2,02:00,75
+Encruzilhada,Domingo,3,03:00,92
+Campo Grande,Segunda,18,18:00,3
+Campo Grande,Segunda,19,19:00,18
+Campo Grande,Segunda,20,20:00,24
+Campo Grande,Segunda,21,21:00,40
+Campo Grande,Segunda,22,22:00,47
+Campo Grande,Segunda,23,23:00,30
+Campo Grande,Segunda,0,00:00,26
+Campo Grande,Segunda,1,01:00,27
+Campo Grande,Segunda,2,02:00,41
+Campo Grande,Segunda,3,03:00,37
+Campo Grande,Terça,18,18:00,9
+Campo Grande,Terça,19,19:00,31
+Campo Grande,Terça,20,20:00,21
+Campo Grande,Terça,21,21:00,38
+Campo Grande,Terça,22,22:00,33
+Campo Grande,Terça,23,23:00,47
+Campo Grande,Terça,0,00:00,44
+Campo Grande,Terça,1,01:00,46
+Campo Grande,Terça,2,02:00,57
+Campo Grande,Terça,3,03:00,46
+Campo Grande,Quarta,18,18:00,27
+Campo Grande,Quarta,19,19:00,32
+Campo Grande,Quarta,20,20:00,59
+Campo Grande,Quarta,21,21:00,26
+Campo Grande,Quarta,22,22:00,53
+Campo Grande,Quarta,23,23:00,65
+Campo Grande,Quarta,0,00:00,75
+Campo Grande,Quarta,1,01:00,56
+Campo Grande,Quarta,2,02:00,69
+Campo Grande,Quarta,3,03:00,51
+Campo Grande,Quinta,18,18:00,60
+Campo Grande,Quinta,19,19:00,41
+Campo Grande,Quinta,20,20:00,65
+Campo Grande,Quinta,21,21:00,78
+Campo Grande,Quinta,22,22:00,76
+Campo Grande,Quinta,23,23:00,100
+Campo Grande,Quinta,0,00:00,78
+Campo Grande,Quinta,1,01:00,100
+Campo Grande,Quinta,2,02:00,100
+Campo Grande,Quinta,3,03:00,83
+Campo Grande,Sexta,18,18:00,78
+Campo Grande,Sexta,19,19:00,22
+Campo Grande,Sexta,20,20:00,100
+Campo Grande,Sexta,21,21:00,100
+Campo Grande,Sexta,22,22:00,100
+Campo Grande,Sexta,23,23:00,100
+Campo Grande,Sexta,0,00:00,100
+Campo Grande,Sexta,1,01:00,100
+Campo Grande,Sexta,2,02:00,100
+Campo Grande,Sexta,3,03:00,100
+Campo Grande,Sábado,18,18:00,71
+Campo Grande,Sábado,19,19:00,70
+Campo Grande,Sábado,20,20:00,100
+Campo Grande,Sábado,21,21:00,100
+Campo Grande,Sábado,22,22:00,100
+Campo Grande,Sábado,23,23:00,100
+Campo Grande,Sábado,0,00:00,100
+Campo Grande,Sábado,1,01:00,100
+Campo Grande,Sábado,2,02:00,100
+Campo Grande,Sábado,3,03:00,100
+Campo Grande,Domingo,18,18:00,15
+Campo Grande,Domingo,19,19:00,59
+Campo Grande,Domingo,20,20:00,68
+Campo Grande,Domingo,21,21:00,82
+Campo Grande,Domingo,22,22:00,80
+Campo Grande,Domingo,23,23:00,73
+Campo Grande,Domingo,0,00:00,100
+Campo Grande,Domingo,1,01:00,91
+Campo Grande,Domingo,2,02:00,100
+Campo Grande,Domingo,3,03:00,100
+Derby,Segunda,18,18:00,5
+Derby,Segunda,19,19:00,24
+Derby,Segunda,20,20:00,15
+Derby,Segunda,21,21:00,25
+Derby,Segunda,22,22:00,24
+Derby,Segunda,23,23:00,36
+Derby,Segunda,0,00:00,39
+Derby,Segunda,1,01:00,41
+Derby,Segunda,2,02:00,48
+Derby,Segunda,3,03:00,35
+Derby,Terça,18,18:00,19
+Derby,Terça,19,19:00,8
+Derby,Terça,20,20:00,43
+Derby,Terça,21,21:00,34
+Derby,Terça,22,22:00,49
+Derby,Terça,23,23:00,53
+Derby,Terça,0,00:00,41
+Derby,Terça,1,01:00,53
+Derby,Terça,2,02:00,44
+Derby,Terça,3,03:00,56
+Derby,Quarta,18,18:00,26
+Derby,Quarta,19,19:00,22
+Derby,Quarta,20,20:00,38
+Derby,Quarta,21,21:00,46
+Derby,Quarta,22,22:00,57
+Derby,Quarta,23,23:00,65
+Derby,Quarta,0,00:00,79
+Derby,Quarta,1,01:00,54
+Derby,Quarta,2,02:00,64
+Derby,Quarta,3,03:00,54
+Derby,Quinta,18,18:00,20
+Derby,Quinta,19,19:00,50
+Derby,Quinta,20,20:00,58
+Derby,Quinta,21,21:00,52
+Derby,Quinta,22,22:00,85
+Derby,Quinta,23,23:00,95
+Derby,Quinta,0,00:00,100
+Derby,Quinta,1,01:00,94
+Derby,Quinta,2,02:00,100
+Derby,Quinta,3,03:00,100
+Derby,Sexta,18,18:00,50
+Derby,Sexta,19,19:00,54
+Derby,Sexta,20,20:00,100
+Derby,Sexta,21,21:00,69
+Derby,Sexta,22,22:00,100
+Derby,Sexta,23,23:00,100
+Derby,Sexta,0,00:00,100
+Derby,Sexta,1,01:00,100
+Derby,Sexta,2,02:00,100
+Derby,Sexta,3,03:00,100
+Derby,Sábado,18,18:00,38
+Derby,Sábado,19,19:00,83
+Derby,Sábado,20,20:00,100
+Derby,Sábado,21,21:00,100
+Derby,Sábado,22,22:00,100
+Derby,Sábado,23,23:00,100
+Derby,Sábado,0,00:00,100
+Derby,Sábado,1,01:00,100
+Derby,Sábado,2,02:00,100
+Derby,Sábado,3,03:00,100
+Derby,Domingo,18,18:00,21
+Derby,Domingo,19,19:00,52
+Derby,Domingo,20,20:00,64
+Derby,Domingo,21,21:00,86
+Derby,Domingo,22,22:00,98
+Derby,Domingo,23,23:00,100
+Derby,Domingo,0,00:00,76
+Derby,Domingo,1,01:00,99
+Derby,Domingo,2,02:00,100
+Derby,Domingo,3,03:00,100
+Imbiribeira,Segunda,18,18:00,5
+Imbiribeira,Segunda,19,19:00,15
+Imbiribeira,Segunda,20,20:00,15
+Imbiribeira,Segunda,21,21:00,16
+Imbiribeira,Segunda,22,22:00,44
+Imbiribeira,Segunda,23,23:00,43
+Imbiribeira,Segunda,0,00:00,37
+Imbiribeira,Segunda,1,01:00,32
+Imbiribeira,Segunda,2,02:00,37
+Imbiribeira,Segunda,3,03:00,53
+Imbiribeira,Terça,18,18:00,11
+Imbiribeira,Terça,19,19:00,32
+Imbiribeira,Terça,20,20:00,26
+Imbiribeira,Terça,21,21:00,30
+Imbiribeira,Terça,22,22:00,42
+Imbiribeira,Terça,23,23:00,61
+Imbiribeira,Terça,0,00:00,36
+Imbiribeira,Terça,1,01:00,62
+Imbiribeira,Terça,2,02:00,49
+Imbiribeira,Terça,3,03:00,44
+Imbiribeira,Quarta,18,18:00,24
+Imbiribeira,Quarta,19,19:00,35
+Imbiribeira,Quarta,20,20:00,39
+Imbiribeira,Quarta,21,21:00,61
+Imbiribeira,Quarta,22,22:00,70
+Imbiribeira,Quarta,23,23:00,64
+Imbiribeira,Quarta,0,00:00,76
+Imbiribeira,Quarta,1,01:00,53
+Imbiribeira,Quarta,2,02:00,49
+Imbiribeira,Quarta,3,03:00,57
+Imbiribeira,Quinta,18,18:00,49
+Imbiribeira,Quinta,19,19:00,40
+Imbiribeira,Quinta,20,20:00,95
+Imbiribeira,Quinta,21,21:00,66
+Imbiribeira,Quinta,22,22:00,75
+Imbiribeira,Quinta,23,23:00,96
+Imbiribeira,Quinta,0,00:00,100
+Imbiribeira,Quinta,1,01:00,87
+Imbiribeira,Quinta,2,02:00,80
+Imbiribeira,Quinta,3,03:00,100
+Imbiribeira,Sexta,18,18:00,66
+Imbiribeira,Sexta,19,19:00,51
+Imbiribeira,Sexta,20,20:00,71
+Imbiribeira,Sexta,21,21:00,100
+Imbiribeira,Sexta,22,22:00,100
+Imbiribeira,Sexta,23,23:00,100
+Imbiribeira,Sexta,0,00:00,100
+Imbiribeira,Sexta,1,01:00,100
+Imbiribeira,Sexta,2,02:00,100
+Imbiribeira,Sexta,3,03:00,100
+Imbiribeira,Sábado,18,18:00,63
+Imbiribeira,Sábado,19,19:00,87
+Imbiribeira,Sábado,20,20:00,100
+Imbiribeira,Sábado,21,21:00,100
+Imbiribeira,Sábado,22,22:00,100
+Imbiribeira,Sábado,23,23:00,100
+Imbiribeira,Sábado,0,00:00,100
+Imbiribeira,Sábado,1,01:00,100
+Imbiribeira,Sábado,2,02:00,100
+Imbiribeira,Sábado,3,03:00,100
+Imbiribeira,Domingo,18,18:00,42
+Imbiribeira,Domingo,19,19:00,29
+Imbiribeira,Domingo,20,20:00,47
+Imbiribeira,Domingo,21,21:00,69
+Imbiribeira,Domingo,22,22:00,100
+Imbiribeira,Domingo,23,23:00,100
+Imbiribeira,Domingo,0,00:00,85
+Imbiribeira,Domingo,1,01:00,80
+Imbiribeira,Domingo,2,02:00,100
+Imbiribeira,Domingo,3,03:00,64
+Iputinga,Segunda,18,18:00,14
+Iputinga,Segunda,19,19:00,24
+Iputinga,Segunda,20,20:00,18
+Iputinga,Segunda,21,21:00,19
+Iputinga,Segunda,22,22:00,34
+Iputinga,Segunda,23,23:00,40
+Iputinga,Segunda,0,00:00,32
+Iputinga,Segunda,1,01:00,46
+Iputinga,Segunda,2,02:00,49
+Iputinga,Segunda,3,03:00,37
+Iputinga,Terça,18,18:00,31
+Iputinga,Terça,19,19:00,4
+Iputinga,Terça,20,20:00,41
+Iputinga,Terça,21,21:00,22
+Iputinga,Terça,22,22:00,45
+Iputinga,Terça,23,23:00,37
+Iputinga,Terça,0,00:00,45
+Iputinga,Terça,1,01:00,51
+Iputinga,Terça,2,02:00,46
+Iputinga,Terça,3,03:00,42
+Iputinga,Quarta,18,18:00,19
+Iputinga,Quarta,19,19:00,17
+Iputinga,Quarta,20,20:00,38
+Iputinga,Quarta,21,21:00,28
+Iputinga,Quarta,22,22:00,56
+Iputinga,Quarta,23,23:00,58
+Iputinga,Quarta,0,00:00,65
+Iputinga,Quarta,1,01:00,58
+Iputinga,Quarta,2,02:00,40
+Iputinga,Quarta,3,03:00,63
+Iputinga,Quinta,18,18:00,40
+Iputinga,Quinta,19,19:00,56
+Iputinga,Quinta,20,20:00,97
+Iputinga,Quinta,21,21:00,67
+Iputinga,Quinta,22,22:00,100
+Iputinga,Quinta,23,23:00,96
+Iputinga,Quinta,0,00:00,100
+Iputinga,Quinta,1,01:00,98
+Iputinga,Quinta,2,02:00,91
+Iputinga,Quinta,3,03:00,83
+Iputinga,Sexta,18,18:00,56
+Iputinga,Sexta,19,19:00,39
+Iputinga,Sexta,20,20:00,81
+Iputinga,Sexta,21,21:00,88
+Iputinga,Sexta,22,22:00,100
+Iputinga,Sexta,23,23:00,100
+Iputinga,Sexta,0,00:00,100
+Iputinga,Sexta,1,01:00,100
+Iputinga,Sexta,2,02:00,100
+Iputinga,Sexta,3,03:00,100
+Iputinga,Sábado,18,18:00,92
+Iputinga,Sábado,19,19:00,71
+Iputinga,Sábado,20,20:00,100
+Iputinga,Sábado,21,21:00,100
+Iputinga,Sábado,22,22:00,100
+Iputinga,Sábado,23,23:00,100
+Iputinga,Sábado,0,00:00,100
+Iputinga,Sábado,1,01:00,100
+Iputinga,Sábado,2,02:00,100
+Iputinga,Sábado,3,03:00,100
+Iputinga,Domingo,18,18:00,42
+Iputinga,Domingo,19,19:00,45
+Iputinga,Domingo,20,20:00,70
+Iputinga,Domingo,21,21:00,78
+Iputinga,Domingo,22,22:00,88
+Iputinga,Domingo,23,23:00,98
+Iputinga,Domingo,0,00:00,70
+Iputinga,Domingo,1,01:00,79
+Iputinga,Domingo,2,02:00,76
+Iputinga,Domingo,3,03:00,97
+Cordeiro,Segunda,18,18:00,15
+Cordeiro,Segunda,19,19:00,17
+Cordeiro,Segunda,20,20:00,27
+Cordeiro,Segunda,21,21:00,21
+Cordeiro,Segunda,22,22:00,52
+Cordeiro,Segunda,23,23:00,29
+Cordeiro,Segunda,0,00:00,41
+Cordeiro,Segunda,1,01:00,33
+Cordeiro,Segunda,2,02:00,30
+Cordeiro,Segunda,3,03:00,41
+Cordeiro,Terça,18,18:00,9
+Cordeiro,Terça,19,19:00,9
+Cordeiro,Terça,20,20:00,48
+Cordeiro,Terça,21,21:00,24
+Cordeiro,Terça,22,22:00,43
+Cordeiro,Terça,23,23:00,29
+Cordeiro,Terça,0,00:00,53
+Cordeiro,Terça,1,01:00,37
+Cordeiro,Terça,2,02:00,57
+Cordeiro,Terça,3,03:00,45
+Cordeiro,Quarta,18,18:00,38
+Cordeiro,Quarta,19,19:00,29
+Cordeiro,Quarta,20,20:00,45
+Cordeiro,Quarta,21,21:00,62
+Cordeiro,Quarta,22,22:00,67
+Cordeiro,Quarta,23,23:00,55
+Cordeiro,Quarta,0,00:00,73
+Cordeiro,Quarta,1,01:00,56
+Cordeiro,Quarta,2,02:00,61
+Cordeiro,Quarta,3,03:00,42
+Cordeiro,Quinta,18,18:00,43
+Cordeiro,Quinta,19,19:00,46
+Cordeiro,Quinta,20,20:00,59
+Cordeiro,Quinta,21,21:00,68
+Cordeiro,Quinta,22,22:00,100
+Cordeiro,Quinta,23,23:00,89
+Cordeiro,Quinta,0,00:00,100
+Cordeiro,Quinta,1,01:00,96
+Cordeiro,Quinta,2,02:00,96
+Cordeiro,Quinta,3,03:00,74
+Cordeiro,Sexta,18,18:00,56
+Cordeiro,Sexta,19,19:00,32
+Cordeiro,Sexta,20,20:00,100
+Cordeiro,Sexta,21,21:00,100
+Cordeiro,Sexta,22,22:00,100
+Cordeiro,Sexta,23,23:00,100
+Cordeiro,Sexta,0,00:00,100
+Cordeiro,Sexta,1,01:00,100
+Cordeiro,Sexta,2,02:00,100
+Cordeiro,Sexta,3,03:00,100
+Cordeiro,Sábado,18,18:00,52
+Cordeiro,Sábado,19,19:00,57
+Cordeiro,Sábado,20,20:00,100
+Cordeiro,Sábado,21,21:00,100
+Cordeiro,Sábado,22,22:00,100
+Cordeiro,Sábado,23,23:00,100
+Cordeiro,Sábado,0,00:00,100
+Cordeiro,Sábado,1,01:00,100
+Cordeiro,Sábado,2,02:00,100
+Cordeiro,Sábado,3,03:00,100
+Cordeiro,Domingo,18,18:00,41
+Cordeiro,Domingo,19,19:00,52
+Cordeiro,Domingo,20,20:00,49
+Cordeiro,Domingo,21,21:00,72
+Cordeiro,Domingo,22,22:00,80
+Cordeiro,Domingo,23,23:00,81
+Cordeiro,Domingo,0,00:00,84
+Cordeiro,Domingo,1,01:00,100
+Cordeiro,Domingo,2,02:00,98
+Cordeiro,Domingo,3,03:00,99
+Rosarinho,Segunda,18,18:00,25
+Rosarinho,Segunda,19,19:00,10
+Rosarinho,Segunda,20,20:00,36
+Rosarinho,Segunda,21,21:00,22
+Rosarinho,Segunda,22,22:00,26
+Rosarinho,Segunda,23,23:00,26
+Rosarinho,Segunda,0,00:00,41
+Rosarinho,Segunda,1,01:00,47
+Rosarinho,Segunda,2,02:00,35
+Rosarinho,Segunda,3,03:00,41
+Rosarinho,Terça,18,18:00,14
+Rosarinho,Terça,19,19:00,22
+Rosarinho,Terça,20,20:00,32
+Rosarinho,Terça,21,21:00,20
+Rosarinho,Terça,22,22:00,36
+Rosarinho,Terça,23,23:00,51
+Rosarinho,Terça,0,00:00,47
+Rosarinho,Terça,1,01:00,56
+Rosarinho,Terça,2,02:00,55
+Rosarinho,Terça,3,03:00,38
+Rosarinho,Quarta,18,18:00,20
+Rosarinho,Quarta,19,19:00,34
+Rosarinho,Quarta,20,20:00,48
+Rosarinho,Quarta,21,21:00,46
+Rosarinho,Quarta,22,22:00,66
+Rosarinho,Quarta,23,23:00,59
+Rosarinho,Quarta,0,00:00,58
+Rosarinho,Quarta,1,01:00,64
+Rosarinho,Quarta,2,02:00,64
+Rosarinho,Quarta,3,03:00,68
+Rosarinho,Quinta,18,18:00,52
+Rosarinho,Quinta,19,19:00,27
+Rosarinho,Quinta,20,20:00,49
+Rosarinho,Quinta,21,21:00,62
+Rosarinho,Quinta,22,22:00,91
+Rosarinho,Quinta,23,23:00,100
+Rosarinho,Quinta,0,00:00,100
+Rosarinho,Quinta,1,01:00,100
+Rosarinho,Quinta,2,02:00,91
+Rosarinho,Quinta,3,03:00,100
+Rosarinho,Sexta,18,18:00,71
+Rosarinho,Sexta,19,19:00,76
+Rosarinho,Sexta,20,20:00,100
+Rosarinho,Sexta,21,21:00,90
+Rosarinho,Sexta,22,22:00,100
+Rosarinho,Sexta,23,23:00,100
+Rosarinho,Sexta,0,00:00,100
+Rosarinho,Sexta,1,01:00,100
+Rosarinho,Sexta,2,02:00,100
+Rosarinho,Sexta,3,03:00,100
+Rosarinho,Sábado,18,18:00,28
+Rosarinho,Sábado,19,19:00,93
+Rosarinho,Sábado,20,20:00,100
+Rosarinho,Sábado,21,21:00,82
+Rosarinho,Sábado,22,22:00,100
+Rosarinho,Sábado,23,23:00,100
+Rosarinho,Sábado,0,00:00,100
+Rosarinho,Sábado,1,01:00,100
+Rosarinho,Sábado,2,02:00,100
+Rosarinho,Sábado,3,03:00,100
+Rosarinho,Domingo,18,18:00,25
+Rosarinho,Domingo,19,19:00,44
+Rosarinho,Domingo,20,20:00,46
+Rosarinho,Domingo,21,21:00,62
+Rosarinho,Domingo,22,22:00,63
+Rosarinho,Domingo,23,23:00,98
+Rosarinho,Domingo,0,00:00,100
+Rosarinho,Domingo,1,01:00,100
+Rosarinho,Domingo,2,02:00,95
+Rosarinho,Domingo,3,03:00,100

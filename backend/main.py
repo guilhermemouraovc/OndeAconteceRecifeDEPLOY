@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field
 
 from chat.responder import build_chat_response
 from chat.retriever import retrieve_events
+from dashboard_service import load_dashboard_data
 from ml.classifier import predict_gratuito_pago
 from pipeline import process_event_dict
 from scrapers import run_all as _run_scrapers
@@ -410,3 +411,8 @@ def scraper_run(max_por_fonte: int = 2) -> Dict[str, Any]:
 @app.post("/pipeline/preview")
 def pipeline_preview(body: EventCreate) -> Dict[str, Any]:
     return process_event_dict(body.model_dump())
+
+
+@app.get("/dashboard/data")
+def dashboard_data() -> Dict[str, Any]:
+    return load_dashboard_data()

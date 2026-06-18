@@ -272,6 +272,7 @@ const showSearch = computed(() => !['event-detail', 'scraper', 'moderacao'].incl
 
 const navItems = [
   { name: 'home', label: 'Agenda', icon: 'home' },
+  { name: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
   { name: 'programacao', label: 'Programação', icon: 'event' },
   { name: 'mapa', label: 'Mapa', icon: 'map' },
   { name: 'favoritos', label: 'Salvos', icon: 'favorite' },

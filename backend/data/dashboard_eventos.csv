@@ -1,0 +1,201 @@
+﻿id_evento,nome,tipo,bairro,latitude,longitude,data,dia_semana,horario,preco_ingresso,publico_estimado,gratuito,plataforma
+EVT0001,Eletrônico — Rock no Porto,Eletrônico,Boa Vista,-8.062,-34.882958,2025-05-11,Domingo,20:00,50,208,False,Instagram
+EVT0002,Happy Hour — DJ Spinheiro,Happy Hour,Várzea,-8.050542,-34.942226,2024-05-27,Segunda,21:00,15,419,False,Sympla
+EVT0003,Festa Junina — Jazz Recife,Festa Junina,Boa Viagem,-8.120741,-34.903749,2025-02-26,Quarta,21:00,80,475,False,Sympla
+EVT0004,Sertanejo — Coletivo Urbano,Sertanejo,Ilha do Leite,-8.058743,-34.887621,2024-04-14,Domingo,19:00,0,97,True,Eventbrite
+EVT0005,Show Musical — Rock no Porto,Show Musical,Iputinga,-8.066881,-34.929093,2024-06-08,Sábado,19:00,80,1281,True,Eventbrite
+EVT0006,Sertanejo — Stand-up Nordeste,Sertanejo,Santo Amaro,-8.071014,-34.89221,2024-09-12,Quinta,22:00,30,391,False,Sympla
+EVT0007,Teatro — DJ Boa Viagem,Teatro,Várzea,-8.045632,-34.942685,2024-03-15,Sexta,22:00,50,1377,False,Sympla
+EVT0008,Happy Hour — Maracatu Nação,Happy Hour,Santo Amaro,-8.065617,-34.892641,2024-05-24,Sexta,22:00,50,1352,False,Sympla
+EVT0009,Forró — Axé Power,Forró,Iputinga,-8.057565,-34.929231,2025-01-25,Sábado,20:00,60,1082,True,Instagram
+EVT0010,Carnaval Fora de Época — Eletrônica PE,Carnaval Fora de Época,Madalena,-8.058367,-34.913036,2024-01-23,Terça,20:00,80,272,True,Eventbrite
+EVT0011,Exposição — Grupo Mangue Beat,Exposição,Cordeiro,-8.06351,-34.925716,2024-09-14,Sábado,23:00,80,1931,True,Eventbrite
+EVT0012,Festa — Stand-up Nordeste,Festa,Aflitos,-8.046937,-34.895688,2024-07-28,Domingo,19:00,50,270,False,Direto
+EVT0013,Happy Hour — DJ Spinheiro,Happy Hour,Derby,-8.06159,-34.899183,2024-11-16,Sábado,21:00,30,1258,True,Instagram
+EVT0014,Open Bar — Grupo Mangue Beat,Open Bar,Casa Forte,-8.030676,-34.907672,2025-05-15,Quinta,19:00,0,354,False,Sympla
+EVT0015,Exposição — DJ Boa Viagem,Exposição,Torre,-8.06807,-34.906055,2024-05-30,Quinta,20:00,20,250,True,Sympla
+EVT0016,Pagode — Coral do Recife,Pagode,Várzea,-8.050028,-34.939002,2024-11-08,Sexta,20:00,80,1549,False,Instagram
+EVT0017,Open Bar — Coletivo Urbano,Open Bar,Boa Viagem,-8.117569,-34.904104,2024-05-10,Sexta,22:00,50,1102,False,Instagram
+EVT0018,Eletrônico — Coletivo Urbano,Eletrônico,Ilha do Leite,-8.061609,-34.891384,2024-12-19,Quinta,22:00,15,462,True,Instagram
+EVT0019,Pagode — Coletivo Urbano,Pagode,Torre,-8.070737,-34.90104,2024-10-19,Sábado,22:00,40,755,True,Sympla
+EVT0020,Pagode — Maracatu Nação,Pagode,Recife Antigo,-8.058806,-34.866265,2025-03-18,Terça,20:00,50,411,True,Eventbrite
+EVT0021,Festa Junina — DJ Boa Viagem,Festa Junina,Ilha do Leite,-8.056461,-34.885159,2024-11-13,Quarta,19:00,40,416,False,Sympla
+EVT0022,Carnaval Fora de Época — Trio Nordestino,Carnaval Fora de Época,Torre,-8.060084,-34.907079,2024-10-23,Quarta,22:00,20,97,True,Eventbrite
+EVT0023,Exposição — Stand-up Nordeste,Exposição,Iputinga,-8.058034,-34.937916,2025-02-06,Quinta,22:00,40,301,False,Sympla
+EVT0024,Festival — Coral do Recife,Festival,Boa Vista,-8.055678,-34.882309,2024-08-27,Terça,22:00,100,416,False,Sympla
+EVT0025,Show Musical — Grupo Mangue Beat,Show Musical,Várzea,-8.050543,-34.937926,2025-02-08,Sábado,21:00,60,691,False,Sympla
+EVT0026,Eletrônico — Axé Power,Eletrônico,Pina,-8.095017,-34.896344,2024-12-11,Quarta,19:00,80,42,False,Instagram
+EVT0027,Show Musical — Coletivo Urbano,Show Musical,Aflitos,-8.039049,-34.902607,2024-02-29,Quinta,20:00,100,49,True,Instagram
+EVT0028,Festa Junina — Rock no Porto,Festa Junina,Torre,-8.063952,-34.902281,2024-08-20,Terça,22:00,15,410,False,Sympla
+EVT0029,Show Musical — Pagode do Cais,Show Musical,Ilha do Leite,-8.061393,-34.890664,2024-07-27,Sábado,20:00,50,1563,True,Direto
+EVT0030,Show Musical — Stand-up Nordeste,Show Musical,Torre,-8.068722,-34.909534,2024-10-05,Sábado,22:00,15,965,True,Sympla
+EVT0031,Show Musical — Axé Power,Show Musical,Boa Viagem,-8.122777,-34.904489,2025-05-12,Segunda,23:00,30,432,True,Sympla
+EVT0032,Teatro — Coral do Recife,Teatro,Cordeiro,-8.070057,-34.929229,2024-04-16,Terça,23:00,0,446,False,Eventbrite
+EVT0033,Stand-up — Forró das Antigas,Stand-up,Iputinga,-8.066681,-34.930603,2024-03-07,Quinta,20:00,0,438,False,Eventbrite
+EVT0034,Show Musical — Stand-up Nordeste,Show Musical,Madalena,-8.062371,-34.912099,2024-10-28,Segunda,23:00,15,119,True,Instagram
+EVT0035,Sertanejo — Grupo Mangue Beat,Sertanejo,Torre,-8.065576,-34.908341,2024-08-17,Sábado,23:00,0,1365,False,Instagram
+EVT0036,Show Musical — Eletrônica PE,Show Musical,Boa Viagem,-8.120585,-34.904704,2024-11-25,Segunda,22:00,15,275,True,Direto
+EVT0037,Festa — Stand-up Nordeste,Festa,Aflitos,-8.043508,-34.896976,2024-11-07,Quinta,21:00,60,94,False,Instagram
+EVT0038,Forró — Grupo Mangue Beat,Forró,Rosarinho,-8.030766,-34.906189,2024-09-15,Domingo,23:00,30,80,False,Instagram
+EVT0039,Forró — Jazz Recife,Forró,Pina,-8.101215,-34.890245,2025-03-30,Domingo,21:00,60,203,False,Direto
+EVT0040,Festa Junina — Trio Nordestino,Festa Junina,Aflitos,-8.049905,-34.902976,2024-07-10,Quarta,22:00,15,272,False,Eventbrite
+EVT0041,Pagode — Axé Power,Pagode,Recife Antigo,-8.06076,-34.87217,2024-10-11,Sexta,22:00,0,1300,False,Sympla
+EVT0042,Festa — Sexteto Pernambucano,Festa,Torre,-8.069143,-34.905214,2024-06-08,Sábado,19:00,50,1333,False,Sympla
+EVT0043,Pagode — Rock no Porto,Pagode,Ilha do Leite,-8.053858,-34.884305,2025-01-25,Sábado,23:00,100,613,True,Sympla
+EVT0044,Show Musical — Stand-up Nordeste,Show Musical,Ilha do Leite,-8.055568,-34.892292,2025-04-20,Domingo,21:00,50,122,True,Eventbrite
+EVT0045,Pagode — Eletrônica PE,Pagode,Aflitos,-8.050165,-34.895108,2025-03-21,Sexta,19:00,15,1496,True,Instagram
+EVT0046,Exposição — Pagode do Cais,Exposição,Campo Grande,-8.05826,-34.910107,2024-08-02,Sexta,23:00,15,472,True,Eventbrite
+EVT0047,Show Musical — Trio Nordestino,Show Musical,Rosarinho,-8.037735,-34.906057,2024-03-21,Quinta,22:00,80,375,False,Direto
+EVT0048,Festa — Rock no Porto,Festa,Imbiribeira,-8.114669,-34.907861,2024-04-20,Sábado,23:00,80,856,False,Sympla
+EVT0049,Pagode — Banda Local A,Pagode,Várzea,-8.053547,-34.934656,2024-04-22,Segunda,20:00,40,58,False,Direto
+EVT0050,Eletrônico — Rock no Porto,Eletrônico,Boa Viagem,-8.123592,-34.901438,2024-03-02,Sábado,20:00,100,1679,False,Sympla
+EVT0051,Forró — Jazz Recife,Forró,Recife Antigo,-8.057746,-34.866755,2024-07-22,Segunda,23:00,60,39,False,Instagram
+EVT0052,Forró — Axé Power,Forró,Casa Forte,-8.033938,-34.904629,2024-05-28,Terça,22:00,50,40,True,Instagram
+EVT0053,Teatro — Eletrônica PE,Teatro,Casa Forte,-8.029712,-34.911251,2025-03-08,Sábado,21:00,50,1042,True,Direto
+EVT0054,Festa — Grupo Mangue Beat,Festa,Espinheiro,-8.037633,-34.903673,2025-02-02,Domingo,21:00,50,291,True,Eventbrite
+EVT0055,Stand-up — Forró das Antigas,Stand-up,Aflitos,-8.043771,-34.894877,2024-02-22,Quinta,19:00,20,131,False,Instagram
+EVT0056,Open Bar — Jazz Recife,Open Bar,Cordeiro,-8.065826,-34.920415,2025-01-21,Terça,23:00,50,326,False,Eventbrite
+EVT0057,Eletrônico — Coletivo Urbano,Eletrônico,Boa Vista,-8.056444,-34.883903,2024-08-13,Terça,21:00,100,256,True,Direto
+EVT0058,Show Musical — Pagode do Cais,Show Musical,Campo Grande,-8.05202,-34.913079,2024-08-24,Sábado,19:00,100,266,False,Instagram
+EVT0059,Open Bar — DJ Spinheiro,Open Bar,Iputinga,-8.062603,-34.931282,2024-10-24,Quinta,20:00,50,408,False,Sympla
+EVT0060,Eletrônico — Axé Power,Eletrônico,Recife Antigo,-8.057011,-34.876088,2024-03-18,Segunda,20:00,0,82,True,Instagram
+EVT0061,Sertanejo — Forró das Antigas,Sertanejo,Imbiribeira,-8.111633,-34.904985,2024-08-12,Segunda,22:00,60,342,False,Sympla
+EVT0062,Festa — Grupo Mangue Beat,Festa,Madalena,-8.056304,-34.916361,2024-01-27,Sábado,21:00,20,825,False,Sympla
+EVT0063,Exposição — Eletrônica PE,Exposição,Aflitos,-8.049453,-34.895494,2024-10-25,Sexta,19:00,40,785,False,Direto
+EVT0064,Festa Junina — Trio Nordestino,Festa Junina,Aflitos,-8.043248,-34.898919,2025-02-20,Quinta,21:00,0,389,False,Direto
+EVT0065,Exposição — Maracatu Nação,Exposição,Graças,-8.051696,-34.89,2024-04-02,Terça,20:00,15,422,False,Sympla
+EVT0066,Happy Hour — DJ Spinheiro,Happy Hour,Iputinga,-8.060057,-34.930483,2024-09-16,Segunda,23:00,20,408,False,Eventbrite
+EVT0067,Happy Hour — Forró das Antigas,Happy Hour,Espinheiro,-8.035346,-34.905476,2024-03-24,Domingo,21:00,30,384,False,Sympla
+EVT0068,Teatro — Coral do Recife,Teatro,Campo Grande,-8.058286,-34.904297,2024-05-25,Sábado,22:00,30,1243,False,Sympla
+EVT0069,Open Bar — Eletrônica PE,Open Bar,Campo Grande,-8.055965,-34.908976,2024-08-13,Terça,20:00,30,174,True,Direto
+EVT0070,Happy Hour — Grupo Mangue Beat,Happy Hour,Derby,-8.060463,-34.895809,2024-01-27,Sábado,19:00,40,910,True,Eventbrite
+EVT0071,Sertanejo — Rock no Porto,Sertanejo,Campo Grande,-8.060899,-34.903074,2024-05-19,Domingo,22:00,50,105,True,Instagram
+EVT0072,Sertanejo — Coral do Recife,Sertanejo,Várzea,-8.051366,-34.945021,2024-01-28,Domingo,20:00,0,221,False,Sympla
+EVT0073,Open Bar — DJ Boa Viagem,Open Bar,Madalena,-8.06254,-34.909991,2025-03-05,Quarta,22:00,20,104,False,Instagram
+EVT0074,Festa — Stand-up Nordeste,Festa,Boa Viagem,-8.123112,-34.904206,2024-11-11,Segunda,23:00,100,39,False,Sympla
+EVT0075,Teatro — Grupo Mangue Beat,Teatro,Santo Amaro,-8.075427,-34.892962,2025-02-01,Sábado,23:00,80,766,True,Sympla
+EVT0076,Pagode — Banda Local A,Pagode,Derby,-8.061417,-34.895099,2025-03-04,Terça,20:00,40,304,False,Sympla
+EVT0077,Teatro — Rock no Porto,Teatro,Torre,-8.068752,-34.902981,2024-11-10,Domingo,23:00,50,322,True,Sympla
+EVT0078,Open Bar — Banda Local A,Open Bar,Imbiribeira,-8.111315,-34.910358,2024-10-05,Sábado,22:00,50,1189,False,Sympla
+EVT0079,Exposição — Grupo Mangue Beat,Exposição,Boa Vista,-8.056742,-34.882178,2024-07-01,Segunda,21:00,20,153,True,Direto
+EVT0080,Happy Hour — Forró das Antigas,Happy Hour,Madalena,-8.053035,-34.912784,2024-10-06,Domingo,22:00,20,359,True,Sympla
+EVT0081,Show Musical — Sexteto Pernambucano,Show Musical,Campo Grande,-8.061474,-34.911606,2025-01-01,Quarta,19:00,50,180,False,Sympla
+EVT0082,Eletrônico — DJ Spinheiro,Eletrônico,Iputinga,-8.058961,-34.938707,2024-07-22,Segunda,21:00,0,159,False,Direto
+EVT0083,Forró — Eletrônica PE,Forró,Torre,-8.06208,-34.900264,2024-03-04,Segunda,22:00,50,485,True,Instagram
+EVT0084,Exposição — Stand-up Nordeste,Exposição,Derby,-8.059386,-34.893275,2024-12-20,Sexta,19:00,60,1782,True,Sympla
+EVT0085,Festa — Axé Power,Festa,Madalena,-8.055069,-34.917322,2024-05-30,Quinta,23:00,60,70,True,Instagram
+EVT0086,Show Musical — Pagode do Cais,Show Musical,Campo Grande,-8.054622,-34.908781,2024-06-28,Sexta,19:00,15,1638,False,Direto
+EVT0087,Show Musical — Jazz Recife,Show Musical,Espinheiro,-8.043582,-34.905193,2024-09-19,Quinta,21:00,50,103,False,Sympla
+EVT0088,Festival — Jazz Recife,Festival,Rosarinho,-8.029614,-34.909536,2024-01-17,Quarta,19:00,20,377,False,Instagram
+EVT0089,Teatro — Banda Local A,Teatro,Ilha do Leite,-8.055172,-34.890011,2024-06-09,Domingo,22:00,100,88,True,Direto
+EVT0090,Carnaval Fora de Época — Sexteto Pernambucano,Carnaval Fora de Época,Ilha do Leite,-8.052044,-34.892573,2025-01-31,Sexta,22:00,30,1063,True,Eventbrite
+EVT0091,Eletrônico — Jazz Recife,Eletrônico,Boa Vista,-8.054033,-34.881274,2025-03-12,Quarta,21:00,50,118,True,Sympla
+EVT0092,Stand-up — Forró das Antigas,Stand-up,Santo Amaro,-8.067458,-34.886872,2024-10-04,Sexta,20:00,50,1893,True,Sympla
+EVT0093,Teatro — Maracatu Nação,Teatro,Aflitos,-8.050685,-34.897352,2024-04-12,Sexta,21:00,80,1768,True,Sympla
+EVT0094,Festa — Eletrônica PE,Festa,Boa Vista,-8.054005,-34.882374,2025-03-28,Sexta,23:00,60,783,False,Sympla
+EVT0095,Exposição — Trio Nordestino,Exposição,Aflitos,-8.0456,-34.895839,2024-02-07,Quarta,21:00,20,358,True,Eventbrite
+EVT0096,Happy Hour — Grupo Mangue Beat,Happy Hour,Imbiribeira,-8.109783,-34.912351,2024-08-09,Sexta,20:00,50,263,True,Direto
+EVT0097,Stand-up — Trio Nordestino,Stand-up,Imbiribeira,-8.112993,-34.908379,2025-04-30,Quarta,23:00,40,463,True,Direto
+EVT0098,Festa — Forró das Antigas,Festa,Iputinga,-8.060898,-34.934032,2024-11-10,Domingo,20:00,50,287,True,Sympla
+EVT0099,Festa Junina — Stand-up Nordeste,Festa Junina,Recife Antigo,-8.060986,-34.867896,2024-02-11,Domingo,22:00,0,424,False,Sympla
+EVT0100,Eletrônico — Eletrônica PE,Eletrônico,Santo Amaro,-8.072431,-34.897124,2024-05-28,Terça,19:00,20,155,False,Instagram
+EVT0101,Teatro — DJ Boa Viagem,Teatro,Campo Grande,-8.058249,-34.90538,2024-09-04,Quarta,21:00,60,204,True,Direto
+EVT0102,Festa — Coral do Recife,Festa,Iputinga,-8.062402,-34.93779,2024-09-20,Sexta,20:00,20,803,True,Sympla
+EVT0103,Happy Hour — Rock no Porto,Happy Hour,Várzea,-8.053021,-34.935616,2024-05-28,Terça,20:00,50,345,False,Eventbrite
+EVT0104,Eletrônico — Jazz Recife,Eletrônico,Espinheiro,-8.038015,-34.902298,2025-01-25,Sábado,19:00,15,1204,False,Sympla
+EVT0105,Teatro — Pagode do Cais,Teatro,Pina,-8.105416,-34.895624,2024-08-22,Quinta,23:00,80,328,False,Sympla
+EVT0106,Forró — Stand-up Nordeste,Forró,Casa Forte,-8.02727,-34.906834,2024-01-05,Sexta,21:00,0,424,False,Sympla
+EVT0107,Teatro — Coletivo Urbano,Teatro,Iputinga,-8.067118,-34.934949,2024-10-18,Sexta,23:00,40,892,True,Eventbrite
+EVT0108,Forró — Axé Power,Forró,Casa Forte,-8.029306,-34.911613,2025-05-14,Quarta,20:00,30,221,False,Sympla
+EVT0109,Show Musical — Axé Power,Show Musical,Recife Antigo,-8.059152,-34.870868,2024-01-21,Domingo,20:00,100,100,True,Direto
+EVT0110,Exposição — Eletrônica PE,Exposição,Rosarinho,-8.029113,-34.905128,2025-04-21,Segunda,21:00,50,113,False,Sympla
+EVT0111,Happy Hour — Pagode do Cais,Happy Hour,Derby,-8.065025,-34.900685,2024-06-02,Domingo,22:00,40,38,True,Sympla
+EVT0112,Festa Junina — Coral do Recife,Festa Junina,Ilha do Leite,-8.055343,-34.888998,2024-08-30,Sexta,20:00,100,1753,False,Eventbrite
+EVT0113,Show Musical — Grupo Mangue Beat,Show Musical,Pina,-8.103711,-34.893708,2025-02-24,Segunda,22:00,20,323,False,Eventbrite
+EVT0114,Open Bar — Maracatu Nação,Open Bar,Imbiribeira,-8.105526,-34.90717,2024-07-29,Segunda,19:00,20,343,True,Sympla
+EVT0115,Sertanejo — Axé Power,Sertanejo,Derby,-8.05752,-34.896484,2024-06-15,Sábado,23:00,50,921,False,Direto
+EVT0116,Teatro — Stand-up Nordeste,Teatro,Derby,-8.062303,-34.899302,2024-11-08,Sexta,21:00,40,654,True,Instagram
+EVT0117,Exposição — Stand-up Nordeste,Exposição,Derby,-8.065547,-34.895118,2024-06-11,Terça,23:00,60,316,False,Direto
+EVT0118,Stand-up — Coletivo Urbano,Stand-up,Aflitos,-8.039536,-34.903052,2025-05-03,Sábado,22:00,40,236,False,Eventbrite
+EVT0119,Stand-up — Stand-up Nordeste,Stand-up,Iputinga,-8.066353,-34.933612,2024-04-13,Sábado,23:00,30,1301,True,Sympla
+EVT0120,Teatro — Coral do Recife,Teatro,Imbiribeira,-8.11537,-34.91104,2024-12-08,Domingo,22:00,15,356,True,Sympla
+EVT0121,Festival — Maracatu Nação,Festival,Iputinga,-8.062271,-34.938607,2025-05-08,Quinta,21:00,50,238,False,Sympla
+EVT0122,Festa Junina — Coral do Recife,Festa Junina,Boa Vista,-8.059578,-34.882323,2025-04-09,Quarta,19:00,20,323,False,Eventbrite
+EVT0123,Happy Hour — Maracatu Nação,Happy Hour,Recife Antigo,-8.066564,-34.868112,2025-04-23,Quarta,21:00,0,233,True,Direto
+EVT0124,Festa — Coletivo Urbano,Festa,Rosarinho,-8.035548,-34.906304,2024-10-17,Quinta,23:00,80,201,True,Sympla
+EVT0125,Teatro — Grupo Mangue Beat,Teatro,Ilha do Leite,-8.060032,-34.887227,2024-08-27,Terça,21:00,20,444,True,Direto
+EVT0126,Pagode — Sexteto Pernambucano,Pagode,Santo Amaro,-8.073894,-34.887726,2025-02-08,Sábado,22:00,60,1531,False,Sympla
+EVT0127,Festival — Maracatu Nação,Festival,Casa Forte,-8.032117,-34.913023,2024-07-24,Quarta,21:00,60,101,True,Instagram
+EVT0128,Exposição — Banda Local A,Exposição,Ilha do Leite,-8.060861,-34.891685,2025-01-20,Segunda,20:00,0,184,True,Instagram
+EVT0129,Forró — Coletivo Urbano,Forró,Espinheiro,-8.035717,-34.898335,2024-06-06,Quinta,21:00,50,381,True,Eventbrite
+EVT0130,Eletrônico — Jazz Recife,Eletrônico,Aflitos,-8.042027,-34.896731,2025-05-05,Segunda,22:00,100,108,False,Sympla
+EVT0131,Open Bar — Trio Nordestino,Open Bar,Graças,-8.047694,-34.895662,2025-02-14,Sexta,21:00,15,656,True,Sympla
+EVT0132,Sertanejo — DJ Boa Viagem,Sertanejo,Iputinga,-8.066026,-34.930746,2025-02-28,Sexta,22:00,15,564,True,Sympla
+EVT0133,Sertanejo — DJ Spinheiro,Sertanejo,Boa Vista,-8.060559,-34.884841,2024-09-07,Sábado,22:00,0,1062,False,Direto
+EVT0134,Forró — Banda Local A,Forró,Boa Viagem,-8.11675,-34.89906,2025-01-05,Domingo,19:00,60,160,False,Sympla
+EVT0135,Festa — DJ Spinheiro,Festa,Recife Antigo,-8.065355,-34.87494,2024-10-04,Sexta,20:00,60,1116,False,Instagram
+EVT0136,Forró — DJ Boa Viagem,Forró,Várzea,-8.048158,-34.941827,2024-08-17,Sábado,20:00,100,314,False,Sympla
+EVT0137,Happy Hour — Banda Local A,Happy Hour,Pina,-8.094258,-34.893444,2024-03-06,Quarta,23:00,60,31,False,Eventbrite
+EVT0138,Exposição — Stand-up Nordeste,Exposição,Campo Grande,-8.059738,-34.903498,2024-05-06,Segunda,19:00,0,109,False,Sympla
+EVT0139,Teatro — Trio Nordestino,Teatro,Boa Viagem,-8.124489,-34.905597,2025-01-27,Segunda,23:00,0,135,True,Sympla
+EVT0140,Teatro — Sexteto Pernambucano,Teatro,Campo Grande,-8.052947,-34.904687,2024-07-24,Quarta,20:00,100,306,False,Eventbrite
+EVT0141,Exposição — Axé Power,Exposição,Cordeiro,-8.071157,-34.920485,2025-02-21,Sexta,23:00,30,1332,False,Direto
+EVT0142,Sertanejo — Forró das Antigas,Sertanejo,Recife Antigo,-8.061288,-34.871974,2024-05-20,Segunda,22:00,0,332,False,Instagram
+EVT0143,Exposição — Rock no Porto,Exposição,Imbiribeira,-8.111101,-34.912401,2025-02-06,Quinta,20:00,100,386,False,Eventbrite
+EVT0144,Stand-up — DJ Boa Viagem,Stand-up,Pina,-8.096331,-34.888023,2025-03-10,Segunda,23:00,60,469,False,Sympla
+EVT0145,Forró — Stand-up Nordeste,Forró,Aflitos,-8.04856,-34.89624,2024-09-28,Sábado,22:00,50,647,True,Sympla
+EVT0146,Show Musical — Eletrônica PE,Show Musical,Graças,-8.045916,-34.894765,2025-01-05,Domingo,19:00,30,167,True,Instagram
+EVT0147,Stand-up — Banda Local A,Stand-up,Madalena,-8.060458,-34.91872,2024-04-16,Terça,19:00,80,495,True,Sympla
+EVT0148,Forró — Coral do Recife,Forró,Graças,-8.047375,-34.892694,2024-12-26,Quinta,22:00,80,498,False,Direto
+EVT0149,Sertanejo — Maracatu Nação,Sertanejo,Torre,-8.065408,-34.901366,2024-05-13,Segunda,22:00,50,481,True,Direto
+EVT0150,Show Musical — Coral do Recife,Show Musical,Encruzilhada,-8.040105,-34.910805,2024-06-09,Domingo,23:00,60,318,False,Eventbrite
+EVT0151,Teatro — Coral do Recife,Teatro,Madalena,-8.057008,-34.913145,2024-04-10,Quarta,21:00,40,224,False,Instagram
+EVT0152,Carnaval Fora de Época — Pagode do Cais,Carnaval Fora de Época,Espinheiro,-8.041969,-34.897356,2024-08-23,Sexta,22:00,20,1778,True,Sympla
+EVT0153,Happy Hour — DJ Spinheiro,Happy Hour,Boa Vista,-8.056828,-34.886051,2024-01-18,Quinta,20:00,15,372,True,Sympla
+EVT0154,Eletrônico — DJ Spinheiro,Eletrônico,Imbiribeira,-8.108586,-34.907999,2024-04-21,Domingo,23:00,80,221,False,Sympla
+EVT0155,Sertanejo — Banda Local A,Sertanejo,Iputinga,-8.067799,-34.932334,2024-01-04,Quinta,23:00,40,240,True,Sympla
+EVT0156,Open Bar — Forró das Antigas,Open Bar,Encruzilhada,-8.047716,-34.909844,2025-02-20,Quinta,20:00,30,495,True,Sympla
+EVT0157,Happy Hour — Stand-up Nordeste,Happy Hour,Ilha do Leite,-8.054461,-34.895052,2024-09-26,Quinta,22:00,80,211,True,Eventbrite
+EVT0158,Festa Junina — DJ Spinheiro,Festa Junina,Boa Vista,-8.064878,-34.886449,2024-06-02,Domingo,23:00,80,469,True,Sympla
+EVT0159,Festa — Rock no Porto,Festa,Espinheiro,-8.036261,-34.902025,2024-12-25,Quarta,19:00,100,285,True,Eventbrite
+EVT0160,Eletrônico — DJ Spinheiro,Eletrônico,Cordeiro,-8.06291,-34.922787,2024-04-18,Quinta,21:00,100,168,True,Eventbrite
+EVT0161,Show Musical — DJ Boa Viagem,Show Musical,Madalena,-8.053973,-34.912447,2025-04-20,Domingo,22:00,15,136,False,Eventbrite
+EVT0162,Pagode — Eletrônica PE,Pagode,Pina,-8.097876,-34.892513,2024-10-15,Terça,22:00,20,457,True,Sympla
+EVT0163,Show Musical — Rock no Porto,Show Musical,Torre,-8.068214,-34.910088,2025-01-16,Quinta,23:00,60,80,False,Sympla
+EVT0164,Open Bar — Maracatu Nação,Open Bar,Ilha do Leite,-8.061262,-34.889364,2024-11-20,Quarta,22:00,60,260,True,Sympla
+EVT0165,Festa — Coletivo Urbano,Festa,Várzea,-8.046423,-34.937443,2024-12-04,Quarta,19:00,40,425,True,Instagram
+EVT0166,Carnaval Fora de Época — Axé Power,Carnaval Fora de Época,Aflitos,-8.046672,-34.902902,2024-12-30,Segunda,21:00,80,229,False,Direto
+EVT0167,Festa — Rock no Porto,Festa,Aflitos,-8.045614,-34.897343,2024-02-22,Quinta,22:00,15,125,True,Sympla
+EVT0168,Festa — Axé Power,Festa,Iputinga,-8.057635,-34.940852,2024-06-30,Domingo,22:00,60,335,True,Sympla
+EVT0169,Pagode — Forró das Antigas,Pagode,Pina,-8.097776,-34.896966,2025-04-08,Terça,21:00,40,296,False,Instagram
+EVT0170,Festival — Stand-up Nordeste,Festival,Boa Vista,-8.060947,-34.885189,2024-03-15,Sexta,19:00,50,1040,False,Eventbrite
+EVT0171,Pagode — Sexteto Pernambucano,Pagode,Derby,-8.063506,-34.900374,2025-01-04,Sábado,19:00,60,1412,False,Sympla
+EVT0172,Eletrônico — Rock no Porto,Eletrônico,Madalena,-8.053214,-34.910686,2024-07-13,Sábado,23:00,20,835,False,Direto
+EVT0173,Eletrônico — Forró das Antigas,Eletrônico,Graças,-8.042425,-34.890375,2024-11-04,Segunda,21:00,80,190,True,Direto
+EVT0174,Happy Hour — Eletrônica PE,Happy Hour,Ilha do Leite,-8.05962,-34.884815,2024-07-11,Quinta,20:00,100,432,True,Sympla
+EVT0175,Carnaval Fora de Época — Jazz Recife,Carnaval Fora de Época,Campo Grande,-8.052428,-34.904025,2024-01-14,Domingo,19:00,60,137,False,Eventbrite
+EVT0176,Teatro — DJ Boa Viagem,Teatro,Santo Amaro,-8.067417,-34.888531,2024-11-20,Quarta,19:00,80,159,False,Sympla
+EVT0177,Sertanejo — Rock no Porto,Sertanejo,Iputinga,-8.061476,-34.931511,2024-07-24,Quarta,21:00,100,475,True,Sympla
+EVT0178,Festa Junina — Pagode do Cais,Festa Junina,Pina,-8.104004,-34.891648,2025-01-28,Terça,23:00,60,370,False,Instagram
+EVT0179,Festa — Coral do Recife,Festa,Boa Viagem,-8.119572,-34.899774,2024-02-24,Sábado,23:00,30,679,False,Direto
+EVT0180,Open Bar — DJ Boa Viagem,Open Bar,Campo Grande,-8.05786,-34.913705,2024-07-19,Sexta,19:00,40,1541,False,Sympla
+EVT0181,Exposição — Axé Power,Exposição,Aflitos,-8.045536,-34.901518,2024-02-29,Quinta,22:00,50,189,False,Sympla
+EVT0182,Exposição — Coletivo Urbano,Exposição,Campo Grande,-8.061464,-34.905471,2024-08-12,Segunda,19:00,50,64,True,Eventbrite
+EVT0183,Sertanejo — Forró das Antigas,Sertanejo,Pina,-8.102028,-34.893884,2025-04-21,Segunda,22:00,30,119,False,Eventbrite
+EVT0184,Forró — Sexteto Pernambucano,Forró,Encruzilhada,-8.043605,-34.905845,2024-04-05,Sexta,19:00,30,209,True,Direto
+EVT0185,Pagode — Forró das Antigas,Pagode,Boa Vista,-8.06161,-34.888635,2025-01-20,Segunda,19:00,40,82,False,Sympla
+EVT0186,Pagode — Eletrônica PE,Pagode,Madalena,-8.055956,-34.916825,2025-05-09,Sexta,22:00,20,945,False,Sympla
+EVT0187,Festa Junina — Axé Power,Festa Junina,Boa Vista,-8.064586,-34.887335,2024-10-29,Terça,20:00,50,98,True,Sympla
+EVT0188,Pagode — Eletrônica PE,Pagode,Encruzilhada,-8.043924,-34.90516,2024-07-17,Quarta,23:00,20,100,True,Instagram
+EVT0189,Festival — Jazz Recife,Festival,Aflitos,-8.043567,-34.893614,2024-05-27,Segunda,19:00,80,191,True,Eventbrite
+EVT0190,Sertanejo — Maracatu Nação,Sertanejo,Várzea,-8.05109,-34.940099,2025-02-21,Sexta,22:00,80,1185,True,Sympla
+EVT0191,Open Bar — Coral do Recife,Open Bar,Boa Viagem,-8.122195,-34.902702,2024-10-16,Quarta,23:00,40,419,True,Instagram
+EVT0192,Sertanejo — Grupo Mangue Beat,Sertanejo,Derby,-8.062127,-34.898785,2024-10-16,Quarta,23:00,50,291,True,Instagram
+EVT0193,Forró — Coral do Recife,Forró,Graças,-8.050427,-34.890008,2024-10-06,Domingo,22:00,40,82,False,Sympla
+EVT0194,Open Bar — Coral do Recife,Open Bar,Casa Forte,-8.033481,-34.907149,2024-08-12,Segunda,21:00,60,445,True,Sympla
+EVT0195,Happy Hour — DJ Spinheiro,Happy Hour,Graças,-8.047159,-34.895613,2024-03-12,Terça,23:00,100,135,True,Direto
+EVT0196,Stand-up — Stand-up Nordeste,Stand-up,Santo Amaro,-8.064571,-34.891827,2024-12-26,Quinta,19:00,20,323,False,Sympla
+EVT0197,Carnaval Fora de Época — DJ Boa Viagem,Carnaval Fora de Época,Aflitos,-8.048004,-34.895463,2024-05-21,Terça,20:00,60,473,False,Eventbrite
+EVT0198,Festa Junina — Eletrônica PE,Festa Junina,Ilha do Leite,-8.058576,-34.888396,2024-10-22,Terça,19:00,60,242,False,Direto
+EVT0199,Exposição — Banda Local A,Exposição,Derby,-8.058573,-34.891834,2024-08-20,Terça,19:00,80,327,False,Sympla
+EVT0200,Forró — Rock no Porto,Forró,Iputinga,-8.058102,-34.935063,2025-02-11,Terça,21:00,40,141,False,Sympla
