@@ -18,10 +18,15 @@ _HEADERS = {
 
 
 def _base_url() -> str:
-    url = os.environ.get("TICKET_API_BASE_URL", "http://127.0.0.1:8090").strip().rstrip("/")
-    if url and not url.startswith(("http://", "https://")):
-        url = f"https://{url}"
-    return url
+    raw = os.environ.get("TICKET_API_BASE_URL", "http://127.0.0.1:8090").strip().rstrip("/")
+    if not raw:
+        return "http://127.0.0.1:8090"
+    if raw.startswith(("http://", "https://")):
+        return raw
+    # Render blueprint (fromService: host) pode vir só como "ticketpe-mock"
+    if "." not in raw:
+        raw = f"{raw}.onrender.com"
+    return f"https://{raw}"
 
 
 def _public_url() -> str:
@@ -103,6 +108,7 @@ def scrape(max_events: int = 2, city: str | None = None) -> list[dict[str, Any]]
         params["city"] = city
 
     url = f"{_base_url()}/api/v1/events"
+    logger.info("ticketpe: buscando %s params=%s", url, params)
     try:
         resp = requests.get(url, params=params, headers=_HEADERS, timeout=_TIMEOUT)
         resp.raise_for_status()

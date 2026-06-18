@@ -17,6 +17,7 @@ from chat.retriever import retrieve_events
 from dashboard_service import load_dashboard_data
 from ml.classifier import predict_gratuito_pago
 from pipeline import process_event_dict
+from pipeline.geocode import resolve_coordinates
 from scrapers import run_all as _run_scrapers
 from scrapers.ticketpe import scrape as _scrape_ticketpe
 from dotenv import load_dotenv
@@ -47,9 +48,18 @@ def _cors_origins() -> list[str]:
     return defaults + [origin.strip() for origin in extra.split(",") if origin.strip()]
 
 
+def _cors_origin_regex() -> str | None:
+    custom = os.environ.get("CORS_ORIGIN_REGEX", "").strip()
+    if custom:
+        return custom
+    # Vercel gera URL diferente em cada preview/deploy (ex.: project-t494x-abc123.vercel.app)
+    return r"https://.*\.vercel\.app"
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_cors_origins(),
+    allow_origin_regex=_cors_origin_regex(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -98,7 +108,7 @@ def _require_moderator_key(header_value: Optional[str]) -> None:
 
 
 def _list_all_events() -> list[dict[str, Any]]:
-    return store.list()
+    return [resolve_coordinates(event) for event in store.list()]
 
 
 def _list_public_events() -> list[dict[str, Any]]:
@@ -398,6 +408,37 @@ def get_categorias() -> List[str]:
 @app.post("/ml/classificar")
 def classificar(body: ClassificarBody) -> Dict[str, Any]:
     return predict_gratuito_pago(body.texto)
+
+
+@app.post("/admin/seed-dashboard")
+def admin_seed_dashboard(
+    limit: int = Query(30, ge=1, le=200),
+    shift_days: int = Query(365, ge=0, le=3650),
+    x_moderator_key: Optional[str] = Header(default=None),
+) -> Dict[str, Any]:
+    """Carrega eventos de teste do dashboard_eventos.csv (com lat/lng para o mapa)."""
+    _require_moderator_key(x_moderator_key)
+    from scripts.seed_dashboard_events import build_seed_events
+
+    seeded = build_seed_events(limit=limit, shift_days=shift_days)
+    existing = store.list()
+    existing_ids = {event.get("external_id") for event in existing if event.get("external_id")}
+    merged = list(existing)
+    added = 0
+    for event in seeded:
+        if event.get("external_id") in existing_ids:
+            continue
+        merged.append(event)
+        existing_ids.add(event.get("external_id"))
+        added += 1
+    store.replace_all(merged)
+    with_coords = sum(1 for event in merged if event.get("lat") and event.get("lng"))
+    return {
+        "adicionados": added,
+        "total": len(merged),
+        "com_coordenadas": with_coords,
+        "fonte": "dashboard_eventos.csv",
+    }
 
 
 @app.post("/scraper/run")

@@ -22,10 +22,7 @@ services:
       - key: PYTHON_VERSION
         value: "3.11.11"
       - key: TICKET_API_BASE_URL
-        fromService:
-          type: web
-          name: ticketpe-mock
-          property: host
+        value: https://ticketpe-mock.onrender.com
       - key: TICKET_CITY
         value: Recife
       - key: TICKET_FETCH_LIMIT
